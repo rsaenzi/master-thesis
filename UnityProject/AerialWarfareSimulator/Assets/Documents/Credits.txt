@@ -1,9 +1,12 @@
 Credits
 
-F-22 Raptop 3D Model:
+Lockheed Martin F-22 Raptor
 https://sketchfab.com/models/c3a3e262744148a8ab6fd666e7c53cae
 
-Skyboxes:
+AIM-9B Sidewinder
+https://sketchfab.com/models/abfa837d79ce48139275e368cdf703c8
+
+Skyboxes
 https://reije081.home.xs4all.nl/skyboxes/
 https://medium.com/@ealbinu/skybox-en-unity-con-cubemaps-212fada2a3da
 https://co.pinterest.com/patriciogonzv/cubemaps/
