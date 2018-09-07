@@ -1,0 +1,10 @@
+Credits
+
+F-22 Raptop 3D Model:
+https://sketchfab.com/models/c3a3e262744148a8ab6fd666e7c53cae
+
+Skyboxes:
+https://reije081.home.xs4all.nl/skyboxes/
+https://medium.com/@ealbinu/skybox-en-unity-con-cubemaps-212fada2a3da
+https://co.pinterest.com/patriciogonzv/cubemaps/
+https://forums.epicgames.com/unreal-tournament-2003-2004/ut2004-level-editing-modeling-skinning/108243-my-skies-and-and-cliff-textures-large-images
