@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterSimpleMotion : MonoBehaviour {
+public class FighterMotion : MonoBehaviour {
 
     // Components
     private Rigidbody body;
+
+    // Input
+    private KeyCode goUpKey = KeyCode.UpArrow;
+    private KeyCode goDownKey = KeyCode.DownArrow;
+    private KeyCode goLeftKey = KeyCode.LeftArrow;
+    private KeyCode goRightKey = KeyCode.RightArrow;
 
     // Motion
     private readonly ForceMode mode = ForceMode.Acceleration;
@@ -22,6 +28,7 @@ public class FighterSimpleMotion : MonoBehaviour {
 
     // Rotation
     private Vector3 rotationVector = Vector3.zero;
+    private Quaternion rotationQuaternion = Quaternion.identity;
     private readonly float interpolationSpeed = 1.2f;
     private readonly float rotationSpeedUp = 50;
     private readonly float rotationSpeedDown = 45;
@@ -48,34 +55,42 @@ public class FighterSimpleMotion : MonoBehaviour {
         // Rotation Targets
         rotationTargetUp = new Vector3(-rotationSpeedUp, 0, 0);
         rotationTargetDown = new Vector3(rotationSpeedDown, 0, 0);
-        rotationTargetLeft = new Vector3(0, 0, rotationSpeedLeft); ;
+        rotationTargetLeft = new Vector3(0, 0, rotationSpeedLeft);
         rotationTargetRight = new Vector3(0, 0, -rotationSpeedRight);
     }
 
     void Update() {
 
+        // We assume we do not need a rotation
         rotationVector = Vector3.zero;
 
-        if(Input.GetKey(KeyCode.UpArrow)) {
+        // If any motion key is pressed...
+        if(Input.GetKey(goUpKey)) {
+
+            // Applies a force vector in the direction of the desired motion
             body.AddForce(motionTargetUp, mode);
+
+            // Set the rotation vector target
             rotationVector += rotationTargetUp;
         }
 
-        if(Input.GetKey(KeyCode.DownArrow)) {
+        if(Input.GetKey(goDownKey)) {
             body.AddForce(motionTargetDown, mode);
             rotationVector += rotationTargetDown;
         }
 
-        if(Input.GetKey(KeyCode.LeftArrow)) {
+        if(Input.GetKey(goLeftKey)) {
             body.AddForce(motionTargetLeft, mode);
             rotationVector += rotationTargetLeft;
         }
 
-        if(Input.GetKey(KeyCode.RightArrow)) {
+        if(Input.GetKey(goRightKey)) {
             body.AddForce(motionTargetRight, mode);
             rotationVector += rotationTargetRight;
         }
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rotationVector), interpolationSpeed * Time.deltaTime);
+        // Apply the rotation vector to the fighter
+        rotationQuaternion = Quaternion.Euler(rotationVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotationQuaternion, interpolationSpeed * Time.deltaTime);
     }
 }
