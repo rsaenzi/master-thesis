@@ -14,11 +14,11 @@ public class FighterMotion : MonoBehaviour {
     private KeyCode goRightKey = KeyCode.RightArrow;
 
     // Motion
-    private readonly ForceMode mode = ForceMode.Acceleration;
-    private readonly float motionForceUp = 20;
-    private readonly float motionForceDown = 30;
-    private readonly float motionForceLeft = 30;
-    private readonly float motionForceRight = 30;
+    private readonly ForceMode motionForceMode = ForceMode.Acceleration;
+    private readonly float motionForceUp = 25;
+    private readonly float motionForceDown = 35;
+    private readonly float motionForceLeft = 40;
+    private readonly float motionForceRight = 40;
 
     // Motion Targets
     private Vector3 motionTargetUp;
@@ -68,24 +68,24 @@ public class FighterMotion : MonoBehaviour {
         if(Input.GetKey(goUpKey)) {
 
             // Applies a force vector in the direction of the desired motion
-            body.AddForce(motionTargetUp, mode);
+            body.AddForce(motionTargetUp, motionForceMode);
 
             // Set the rotation vector target
             rotationVector += rotationTargetUp;
         }
 
         if(Input.GetKey(goDownKey)) {
-            body.AddForce(motionTargetDown, mode);
+            body.AddForce(motionTargetDown, motionForceMode);
             rotationVector += rotationTargetDown;
         }
 
         if(Input.GetKey(goLeftKey)) {
-            body.AddForce(motionTargetLeft, mode);
+            body.AddForce(motionTargetLeft, motionForceMode);
             rotationVector += rotationTargetLeft;
         }
 
         if(Input.GetKey(goRightKey)) {
-            body.AddForce(motionTargetRight, mode);
+            body.AddForce(motionTargetRight, motionForceMode);
             rotationVector += rotationTargetRight;
         }
 
