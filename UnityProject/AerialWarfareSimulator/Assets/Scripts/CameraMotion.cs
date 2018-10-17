@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraMotion : MonoBehaviour {
 
-    // Motion
-    private Vector3 motionVector;
-    private float motionSpeed = 20.0f;
+    // Approach
+    private Vector3 approachVector;
+    private float approachSpeed = 25.0f;
 
     // Target to follow
     private Transform fighter;
@@ -14,7 +14,7 @@ public class CameraMotion : MonoBehaviour {
     void Awake() {
 
         // Target to follow
-        fighter = GameObject.Find("Fighter").transform;
+        fighter = GameObject.Find("Fighter/CameraTarget").transform;
     }
 
     void Update() {
@@ -24,13 +24,13 @@ public class CameraMotion : MonoBehaviour {
 
         // We can get a closer or farther view of the plane
         if(Input.GetKey(KeyCode.W)) {
-            motionVector = Vector3.forward * Time.deltaTime * motionSpeed;
-            this.transform.Translate(motionVector, Space.Self);
+            approachVector = Vector3.forward * Time.deltaTime * approachSpeed;
+            this.transform.Translate(approachVector, Space.Self);
         }
 
         if(Input.GetKey(KeyCode.S)) {
-            motionVector = Vector3.back * Time.deltaTime * motionSpeed;
-            this.transform.Translate(motionVector, Space.Self);
+            approachVector = Vector3.back * Time.deltaTime * approachSpeed;
+            this.transform.Translate(approachVector, Space.Self);
         }
     }
 }

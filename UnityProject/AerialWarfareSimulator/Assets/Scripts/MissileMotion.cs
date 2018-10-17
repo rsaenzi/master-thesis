@@ -9,7 +9,7 @@ public class MissileMotion : MonoBehaviour {
 
     // Motion
     private Vector3 motionVector;
-    private readonly float motionSpeed = 40.0f;
+    private readonly float motionSpeed = 50.0f;
 
     // Collider Activation
     private float initPositionZ = 0.0f;
