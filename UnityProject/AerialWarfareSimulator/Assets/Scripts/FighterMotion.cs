@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class FighterMotion : MonoBehaviour {
 
@@ -8,10 +9,10 @@ public class FighterMotion : MonoBehaviour {
     private Rigidbody body;
 
     // Input
-    private KeyCode goUpKey = KeyCode.UpArrow;
-    private KeyCode goDownKey = KeyCode.DownArrow;
-    private KeyCode goLeftKey = KeyCode.LeftArrow;
-    private KeyCode goRightKey = KeyCode.RightArrow;
+    private readonly string verticalAxisName = "Vertical";
+    private readonly string horizontalAxisName = "Horizontal";
+    private float verticalAxisValue = 0;
+    private float horizontalAxisValue = 0;
 
     // Turn
     private readonly ForceMode motionForceMode = ForceMode.Acceleration;
@@ -29,7 +30,7 @@ public class FighterMotion : MonoBehaviour {
     // Rotation
     private Vector3 rotationVector = Vector3.zero;
     private Quaternion rotationQuaternion = Quaternion.identity;
-    private readonly float interpolationSpeed = 1.2f;
+    private readonly float interpolationSpeed = 1.5f;
     private readonly float rotationAngleUp = 50;
     private readonly float rotationAngleDown = 40;
     private readonly float rotationAngleLeft = 60;
@@ -61,32 +62,41 @@ public class FighterMotion : MonoBehaviour {
 
     void Update() {
 
+        // Get the key/joystick input values
+#if UNITY_EDITOR
+        verticalAxisValue = Input.GetAxis(verticalAxisName);
+        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
+
+# elif UNITY_IOS || UNITY_ANDROID
+        verticalAxisValue = CrossPlatformInputManager.GetAxis(verticalAxisName);
+        horizontalAxisValue = CrossPlatformInputManager.GetAxis(horizontalAxisName);
+
+#else
+        verticalAxisValue = Input.GetAxis(verticalAxisName);
+        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
+#endif
+
         // We assume we do not need a rotation
         rotationVector = Vector3.zero;
 
-        // If any motion key is pressed...
-        if(Input.GetKey(goUpKey)) {
-
-            // Applies a force vector in the direction of the desired motion
-            body.AddForce(turnTargetUp, motionForceMode);
-
-            // Set the rotation vector target
-            rotationVector += rotationTargetUp;
+        if(verticalAxisValue > 0) { // Up
+            body.AddForce(turnTargetUp * verticalAxisValue, motionForceMode); // Applies a force vector in the direction of the desired motion
+            rotationVector += rotationTargetUp * verticalAxisValue; // Set the rotation vector target
         }
 
-        if(Input.GetKey(goDownKey)) {
-            body.AddForce(turnTargetDown, motionForceMode);
-            rotationVector += rotationTargetDown;
+        if(verticalAxisValue < 0) { // Down
+            body.AddForce(turnTargetDown * -verticalAxisValue, motionForceMode);
+            rotationVector += rotationTargetDown * -verticalAxisValue;
         }
 
-        if(Input.GetKey(goLeftKey)) {
-            body.AddForce(turnTargetLeft, motionForceMode);
-            rotationVector += rotationTargetLeft;
+        if(horizontalAxisValue < 0) { // Right
+            body.AddForce(turnTargetRight * horizontalAxisValue, motionForceMode);
+            rotationVector += rotationTargetRight * horizontalAxisValue;
         }
 
-        if(Input.GetKey(goRightKey)) {
-            body.AddForce(turnTargetRight, motionForceMode);
-            rotationVector += rotationTargetRight;
+        if(horizontalAxisValue > 0) { // Left
+            body.AddForce(turnTargetLeft * -horizontalAxisValue, motionForceMode);
+            rotationVector += rotationTargetLeft * -horizontalAxisValue;
         }
 
         // Apply the rotation vector to the fighter

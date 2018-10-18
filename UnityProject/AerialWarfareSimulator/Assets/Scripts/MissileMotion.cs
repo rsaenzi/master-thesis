@@ -51,7 +51,6 @@ public class MissileMotion : MonoBehaviour {
                 safeDistanceReached = true;
 
                 // Activates the collider to detect collisions with enemies
-                //GameObject.Find(this.name + "/Collider").GetComponent<CapsuleCollider>().isTrigger = false;
                 this.GetComponent<CapsuleCollider>().isTrigger = false;
             }
         }
