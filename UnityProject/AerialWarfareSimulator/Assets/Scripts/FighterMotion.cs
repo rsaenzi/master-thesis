@@ -70,7 +70,6 @@ public class FighterMotion : MonoBehaviour {
 # elif UNITY_IOS || UNITY_ANDROID
         verticalAxisValue = CrossPlatformInputManager.GetAxis(verticalAxisName);
         horizontalAxisValue = CrossPlatformInputManager.GetAxis(horizontalAxisName);
-
 #else
         verticalAxisValue = Input.GetAxis(verticalAxisName);
         horizontalAxisValue = Input.GetAxis(horizontalAxisName);
@@ -79,6 +78,7 @@ public class FighterMotion : MonoBehaviour {
         // We assume we do not need a rotation
         rotationVector = Vector3.zero;
 
+        // Apply the force and calculate the rotation vector
         if(verticalAxisValue > 0) { // Up
             body.AddForce(turnTargetUp * verticalAxisValue, motionForceMode); // Applies a force vector in the direction of the desired motion
             rotationVector += rotationTargetUp * verticalAxisValue; // Set the rotation vector target
