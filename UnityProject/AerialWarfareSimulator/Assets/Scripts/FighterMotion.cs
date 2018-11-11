@@ -9,12 +9,12 @@ public class FighterMotion : MonoBehaviour {
     private Rigidbody body;
 
     // Input
-    private readonly string verticalAxisName = "Vertical";
-    private readonly string horizontalAxisName = "Horizontal";
+    private readonly string verticalAxisName = "Vertical";     // FighterMotionVertical
+    private readonly string horizontalAxisName = "Horizontal"; // FighterMotionVertical
     private float verticalAxisValue = 0;
     private float horizontalAxisValue = 0;
 
-    // Turn
+    // Turn Forces
     private readonly ForceMode motionForceMode = ForceMode.Acceleration;
     private readonly float turnForceUp = 25;
     private readonly float turnForceDown = 35;
@@ -27,7 +27,7 @@ public class FighterMotion : MonoBehaviour {
     private Vector3 turnTargetLeft;
     private Vector3 turnTargetRight;
 
-    // Rotation
+    // Rotation Angles
     private Vector3 rotationVector = Vector3.zero;
     private Quaternion rotationQuaternion = Quaternion.identity;
     private readonly float interpolationSpeed = 1.5f;
