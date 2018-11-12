@@ -79,22 +79,22 @@ public class FighterMotion : MonoBehaviour {
         rotationVector = Vector3.zero;
 
         // Apply the force and calculate the rotation vector
-        if(verticalAxisValue > 0) { // Up
+        if (verticalAxisValue > 0) { // Up
             body.AddForce(turnTargetUp * verticalAxisValue, motionForceMode); // Applies a force vector in the direction of the desired motion
             rotationVector += rotationTargetUp * verticalAxisValue; // Set the rotation vector target
         }
 
-        if(verticalAxisValue < 0) { // Down
+        if (verticalAxisValue < 0) { // Down
             body.AddForce(turnTargetDown * -verticalAxisValue, motionForceMode);
             rotationVector += rotationTargetDown * -verticalAxisValue;
         }
 
-        if(horizontalAxisValue < 0) { // Right
+        if (horizontalAxisValue < 0) { // Right
             body.AddForce(turnTargetRight * horizontalAxisValue, motionForceMode);
             rotationVector += rotationTargetRight * horizontalAxisValue;
         }
 
-        if(horizontalAxisValue > 0) { // Left
+        if (horizontalAxisValue > 0) { // Left
             body.AddForce(turnTargetLeft * -horizontalAxisValue, motionForceMode);
             rotationVector += rotationTargetLeft * -horizontalAxisValue;
         }
