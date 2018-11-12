@@ -6,8 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 public class CameraMotion : MonoBehaviour {
 
     // Input
-    private readonly string verticalAxisName = "Mouse Y"; // CameraDistance
-    private readonly string horizontalAxisName = "Mouse X"; // CameraRotation
+    private readonly string verticalAxisName = "CameraDistance";
+    private readonly string horizontalAxisName = "CameraRotation";
     private float verticalAxisValue = 0;
     private float horizontalAxisValue = 0;
 
@@ -20,11 +20,11 @@ public class CameraMotion : MonoBehaviour {
     private Vector3 approachTargetMoveAway;
 
     // Rotation Speed
-    private readonly float rotationSpeed = 40.0f;
+    private readonly float rotationSpeed = 60.0f;
 
     // Distances
     private float currentDistanceToFighter = 0.0f;
-    private readonly float minDistanceToFighter = 13.0f;
+    private readonly float minDistanceToFighter = 14.0f;
     private readonly float maxDistanceToFighter = 100.0f;
 
     // Target to follow

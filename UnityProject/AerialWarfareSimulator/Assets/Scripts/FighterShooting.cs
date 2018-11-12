@@ -9,8 +9,8 @@ public class FighterShooting : MonoBehaviour {
     private AudioSource gatlingSound;
 
     // Input
-    private readonly string shootGatlingButtonName = "Fire1";  // FighterShootGatling
-    private readonly string launchMissileButtonName = "Fire2"; // FighterLaunchMissile
+    private readonly string shootGatlingButtonName = "FighterShootGatling";
+    private readonly string launchMissileButtonName = "FighterLaunchMissile";
     private bool shootGatlingButtonUp = false;
     private bool shootGatlingButtonDown = false;
     private bool launchMissileButtonDown = false;

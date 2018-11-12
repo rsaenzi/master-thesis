@@ -10,7 +10,7 @@ public class FighterMotion : MonoBehaviour {
 
     // Input
     private readonly string verticalAxisName = "Vertical";     // FighterMotionVertical
-    private readonly string horizontalAxisName = "Horizontal"; // FighterMotionVertical
+    private readonly string horizontalAxisName = "Horizontal"; // FighterMotionHorizontal
     private float verticalAxisValue = 0;
     private float horizontalAxisValue = 0;
 
