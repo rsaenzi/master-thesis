@@ -40,6 +40,12 @@ public class CameraMotion : MonoBehaviour {
         approachTargetMoveAway = Vector3.back * approachSpeedMoveAway;
     }
 
+    void Start() {
+
+        // Always the camera is pointing toward the fighter
+        this.transform.LookAt(fighter);
+    }
+
     void Update() {
 
         // Get the key/joystick input values

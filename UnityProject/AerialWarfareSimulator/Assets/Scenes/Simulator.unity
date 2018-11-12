@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bf3be603548374ca46f521a3aa7fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Fire2
+  Name: FighterLaunchMissile
 --- !u!114 &81088488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,10 +914,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axesToUse: 1
   controlStyle: 0
-  horizontalAxisName: Mouse X
-  verticalAxisName: Mouse Y
-  Xsensitivity: 0
-  Ysensitivity: 1
+  horizontalAxisName: CameraRotation
+  verticalAxisName: 
+  Xsensitivity: 1
+  Ysensitivity: 0
 --- !u!114 &673972441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bf3be603548374ca46f521a3aa7fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Fire1
+  Name: FighterShootGatling
 --- !u!114 &726067649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,8 +1204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axesToUse: 2
   controlStyle: 0
-  horizontalAxisName: Mouse X
-  verticalAxisName: Mouse Y
+  horizontalAxisName: 
+  verticalAxisName: CameraDistance
   Xsensitivity: 0
   Ysensitivity: 1
 --- !u!114 &1007005566
