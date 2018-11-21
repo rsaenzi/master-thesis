@@ -28,12 +28,12 @@ public class CameraMainMotion : MonoBehaviour {
     private readonly float maxDistanceToFighter = 100.0f;
 
     // Target to follow
-    private Transform fighter;
+    private Transform cameraTarget;
 
     void Awake() {
 
         // Target to follow
-        fighter = GameObject.Find("Fighter/CameraTarget").transform;
+        cameraTarget = GameObject.Find("Fighter/CameraTarget").transform;
 
         // Approach Targets
         approachTargetGetClose = Vector3.forward * approachSpeedGetClose;
@@ -43,7 +43,7 @@ public class CameraMainMotion : MonoBehaviour {
     void Start() {
 
         // Always the camera is pointing toward the fighter
-        this.transform.LookAt(fighter);
+        this.transform.LookAt(cameraTarget);
     }
 
     void Update() {
@@ -65,7 +65,7 @@ public class CameraMainMotion : MonoBehaviour {
         if (axisValueCameraDistance > 0) {
 
             // Calculates the z-distance between the camera and the fighter
-            currentDistanceToFighter = Vector3.Distance(this.transform.position, fighter.position);
+            currentDistanceToFighter = Vector3.Distance(this.transform.position, cameraTarget.position);
 
             if (currentDistanceToFighter > minDistanceToFighter) {
 
@@ -77,7 +77,7 @@ public class CameraMainMotion : MonoBehaviour {
         if (axisValueCameraDistance < 0) {
 
             // Calculates the z-distance between the camera and the fighter
-            currentDistanceToFighter = Vector3.Distance(this.transform.position, fighter.position);
+            currentDistanceToFighter = Vector3.Distance(this.transform.position, cameraTarget.position);
 
             if (currentDistanceToFighter < maxDistanceToFighter) {
 
@@ -88,10 +88,10 @@ public class CameraMainMotion : MonoBehaviour {
 
         // Rotates the camera around the fighter
         if (axisValueCameraRotationY != 0) {
-            this.transform.RotateAround(fighter.transform.position, Vector3.up, rotationSpeed * Time.deltaTime * -axisValueCameraRotationY);
+            this.transform.RotateAround(cameraTarget.transform.position, Vector3.up, rotationSpeed * Time.deltaTime * -axisValueCameraRotationY);
         }
 
         // Always the camera is pointing toward the fighter
-        this.transform.LookAt(fighter);
+        this.transform.LookAt(cameraTarget);
     }
 }

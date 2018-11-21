@@ -8,15 +8,15 @@ public class CameraBackControl : MonoBehaviour {
     private readonly float distanceToFighter = 15.0f;
 
     // Target to follow
-    private Transform fighter;
+    private Transform cameraTarget;
 
     void Awake() {
 
         // Target to follow
-        fighter = GameObject.Find("Fighter/CameraTarget").transform;
+        cameraTarget = GameObject.Find("Fighter/CameraTarget").transform;
     }
 
     void LateUpdate() {
-        this.transform.position = fighter.position + (Vector3.back * distanceToFighter);
+        this.transform.position = cameraTarget.position + (Vector3.back * distanceToFighter);
     }
 }
