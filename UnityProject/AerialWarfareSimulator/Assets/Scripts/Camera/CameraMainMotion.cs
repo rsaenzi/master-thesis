@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class CameraMotion : MonoBehaviour {
+public class CameraMainMotion : MonoBehaviour {
 
     // Input
-    private readonly string verticalAxisName = "CameraDistance";
-    private readonly string horizontalAxisName = "CameraRotation";
-    private float verticalAxisValue = 0;
-    private float horizontalAxisValue = 0;
+    private readonly string axisCameraDistance = "CameraDistance";
+    private readonly string axisCameraRotationY = "CameraRotationY";
+    private float axisValueCameraDistance = 0;
+    private float axisValueCameraRotationY = 0;
 
     // Approach Speeds
     private readonly float approachSpeedGetClose = 50.0f;
@@ -50,47 +50,45 @@ public class CameraMotion : MonoBehaviour {
 
         // Get the key/joystick input values
 #if UNITY_EDITOR
-        verticalAxisValue = Input.GetAxis(verticalAxisName);
-        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
+        axisValueCameraDistance = Input.GetAxis(axisCameraDistance);
+        axisValueCameraRotationY = Input.GetAxis(axisCameraRotationY);
 
 # elif UNITY_IOS || UNITY_ANDROID
-        verticalAxisValue = CrossPlatformInputManager.GetAxis(verticalAxisName);
-        horizontalAxisValue = CrossPlatformInputManager.GetAxis(horizontalAxisName);
+        axisValueCameraDistance = CrossPlatformInputManager.GetAxis(axisCameraDistance);
+        axisValueCameraRotationY = CrossPlatformInputManager.GetAxis(axisCameraRotationY);
 #else
-        verticalAxisValue = Input.GetAxis(verticalAxisName);
-        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
+        axisValueCameraDistance = Input.GetAxis(axisCameraDistance);
+        axisValueCameraRotationY = Input.GetAxis(axisCameraRotationY);
 #endif
 
         // Gets a closer or farther view of the fighter
-        if (verticalAxisValue > 0) {
+        if (axisValueCameraDistance > 0) {
 
             // Calculates the z-distance between the camera and the fighter
             currentDistanceToFighter = Vector3.Distance(this.transform.position, fighter.position);
-            //currentDistanceToFighter = Mathf.Abs(this.transform.position.z - fighter.position.z);
 
             if (currentDistanceToFighter > minDistanceToFighter) {
 
                 // Get close to the figther
-                this.transform.Translate(approachTargetGetClose * Time.deltaTime * verticalAxisValue, Space.Self);
+                this.transform.Translate(approachTargetGetClose * Time.deltaTime * axisValueCameraDistance, Space.Self);
             }
         }
 
-        if (verticalAxisValue < 0) {
+        if (axisValueCameraDistance < 0) {
 
             // Calculates the z-distance between the camera and the fighter
             currentDistanceToFighter = Vector3.Distance(this.transform.position, fighter.position);
-            //currentDistanceToFighter = Mathf.Abs(this.transform.position.z - fighter.position.z);
 
             if (currentDistanceToFighter < maxDistanceToFighter) {
 
                 // Moves away from the figther
-                this.transform.Translate(approachTargetMoveAway * Time.deltaTime * -verticalAxisValue, Space.Self);
+                this.transform.Translate(approachTargetMoveAway * Time.deltaTime * -axisValueCameraDistance, Space.Self);
             }
         }
 
         // Rotates the camera around the fighter
-        if (horizontalAxisValue != 0) {
-            this.transform.RotateAround(fighter.transform.position, Vector3.up, rotationSpeed * Time.deltaTime * -horizontalAxisValue);
+        if (axisValueCameraRotationY != 0) {
+            this.transform.RotateAround(fighter.transform.position, Vector3.up, rotationSpeed * Time.deltaTime * -axisValueCameraRotationY);
         }
 
         // Always the camera is pointing toward the fighter

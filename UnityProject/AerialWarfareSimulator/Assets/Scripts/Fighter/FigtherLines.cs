@@ -9,8 +9,8 @@ public class FigtherLines : MonoBehaviour {
     private Vector3 localForward;
 
     // Line lenghts
-    private readonly float worldForwardLenght = 20;
-    private readonly float localForwardLenght = 30;
+    private readonly float worldForwardLenght = 25;
+    private readonly float localForwardLenght = 50;
 
     public Transform[] enemies;
 
@@ -29,12 +29,12 @@ public class FigtherLines : MonoBehaviour {
             }
         }
 
+        // Draw a green line always pointing forward in Local Space
+        localForward = this.transform.position + (this.transform.forward * localForwardLenght);
+        Debug.DrawLine(this.transform.position, localForward, Color.green, 0, true);
+
         // Draw a green line always pointing forward in World Space
         worldForward = this.transform.position + (Vector3.forward * worldForwardLenght);
         Debug.DrawLine(this.transform.position, worldForward, Color.cyan, 0, true);
-
-        // Draw a green line always pointing forward in Local Space
-        localForward = this.transform.position + (this.transform.forward * localForwardLenght);
-        Debug.DrawLine(this.transform.position, localForward, Color.green, 0, false);
     }
 }
