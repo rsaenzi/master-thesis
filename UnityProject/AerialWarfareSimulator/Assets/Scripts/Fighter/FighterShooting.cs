@@ -9,8 +9,8 @@ public class FighterShooting : MonoBehaviour {
     private AudioSource gatlingSound;
 
     // Input
-    private readonly string buttonFighterShootGatling = "FighterShootGatling";
-    private readonly string buttonFighterLaunchMissile = "FighterLaunchMissile";
+    private readonly string shootGatlingButtonName = "FighterShootGatling";
+    private readonly string launchMissileButtonName = "FighterLaunchMissile";
     private bool shootGatlingButtonUp = false;
     private bool shootGatlingButtonDown = false;
     private bool launchMissileButtonDown = false;
@@ -29,7 +29,7 @@ public class FighterShooting : MonoBehaviour {
     void Awake() {
 
         // Components
-        gatlingSound = GameObject.Find("Audio/Sounds/GatlingShooting").GetComponent<AudioSource>();
+        gatlingSound = GameObject.Find("Sounds/GatlingShooting").GetComponent<AudioSource>();
 
         // Prefabs
         missilePrefab = Resources.Load("Prefabs/Missile") as GameObject;
@@ -46,18 +46,18 @@ public class FighterShooting : MonoBehaviour {
 
         // Get the key/joystick input values
 #if UNITY_EDITOR
-        shootGatlingButtonUp = Input.GetButtonUp(buttonFighterShootGatling);
-        shootGatlingButtonDown = Input.GetButtonDown(buttonFighterShootGatling);
-        launchMissileButtonDown = Input.GetButtonDown(buttonFighterLaunchMissile);
+        shootGatlingButtonUp = Input.GetButtonUp(shootGatlingButtonName);
+        shootGatlingButtonDown = Input.GetButtonDown(shootGatlingButtonName);
+        launchMissileButtonDown = Input.GetButtonDown(launchMissileButtonName);
 
 # elif UNITY_IOS || UNITY_ANDROID
-        shootGatlingButtonUp = CrossPlatformInputManager.GetButtonUp(buttonFighterShootGatling);
-        shootGatlingButtonDown = CrossPlatformInputManager.GetButtonDown(buttonFighterShootGatling);
-        launchMissileButtonDown = CrossPlatformInputManager.GetButtonDown(buttonFighterLaunchMissile);
+        shootGatlingButtonUp = CrossPlatformInputManager.GetButtonUp(shootGatlingButtonName);
+        shootGatlingButtonDown = CrossPlatformInputManager.GetButtonDown(shootGatlingButtonName);
+        launchMissileButtonDown = CrossPlatformInputManager.GetButtonDown(launchMissileButtonName);
 #else
-        shootGatlingButtonUp = Input.GetButtonUp(buttonFighterShootGatling);
-        shootGatlingButtonDown = Input.GetButtonDown(buttonFighterShootGatling);
-        launchMissileButtonDown = Input.GetButtonDown(buttonFighterLaunchMissile);
+        shootGatlingButtonUp = Input.GetButtonUp(shootGatlingButtonName);
+        shootGatlingButtonDown = Input.GetButtonDown(shootGatlingButtonName);
+        launchMissileButtonDown = Input.GetButtonDown(launchMissileButtonName);
 #endif
 
         // Starts the shooting sound when shoot key is pressed

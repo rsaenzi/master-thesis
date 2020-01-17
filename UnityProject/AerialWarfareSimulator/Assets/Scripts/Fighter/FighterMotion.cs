@@ -9,10 +9,10 @@ public class FighterMotion : MonoBehaviour {
     private Rigidbody body;
 
     // Input
-    private readonly string axisFighterMotionVertical = "Vertical";    
-    private readonly string axisFighterMotionHorizontal = "Horizontal";
-    private float axisValueFighterMotionVertical = 0;
-    private float axisValueFighterMotionHorizontal = 0;
+    private readonly string verticalAxisName = "Vertical";     // FighterMotionVertical
+    private readonly string horizontalAxisName = "Horizontal"; // FighterMotionHorizontal
+    private float verticalAxisValue = 0;
+    private float horizontalAxisValue = 0;
 
     // Turn Forces
     private readonly ForceMode motionForceMode = ForceMode.Acceleration;
@@ -33,9 +33,8 @@ public class FighterMotion : MonoBehaviour {
     private readonly float interpolationSpeed = 1.5f;
     private readonly float rotationAngleUp = 50;
     private readonly float rotationAngleDown = 40;
-
-    private readonly float rotationAngleAxisY = 30;
-    private readonly float rotationAngleAxisZ = 60;
+    private readonly float rotationAngleLeft = 60;
+    private readonly float rotationAngleRight = 60;
 
     // Rotation Targets
     private Vector3 rotationTargetUp;
@@ -57,47 +56,47 @@ public class FighterMotion : MonoBehaviour {
         // Rotation Targets
         rotationTargetUp = new Vector3(-rotationAngleUp, 0, 0);
         rotationTargetDown = new Vector3(rotationAngleDown, 0, 0);
-        rotationTargetLeft = new Vector3(0, -rotationAngleAxisY, rotationAngleAxisZ);
-        rotationTargetRight = new Vector3(0, rotationAngleAxisY, -rotationAngleAxisZ);
+        rotationTargetLeft = new Vector3(0, 0, rotationAngleLeft);
+        rotationTargetRight = new Vector3(0, 0, -rotationAngleRight);
     }
 
     void Update() {
 
         // Get the key/joystick input values
 #if UNITY_EDITOR
-        axisValueFighterMotionVertical = Input.GetAxis(axisFighterMotionVertical);
-        axisValueFighterMotionHorizontal = Input.GetAxis(axisFighterMotionHorizontal);
+        verticalAxisValue = Input.GetAxis(verticalAxisName);
+        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
 
 # elif UNITY_IOS || UNITY_ANDROID
-        axisValueFighterMotionVertical = CrossPlatformInputManager.GetAxis(axisFighterMotionVertical);
-        axisValueFighterMotionHorizontal = CrossPlatformInputManager.GetAxis(axisFighterMotionHorizontal);
+        verticalAxisValue = CrossPlatformInputManager.GetAxis(verticalAxisName);
+        horizontalAxisValue = CrossPlatformInputManager.GetAxis(horizontalAxisName);
 #else
-        axisValueFighterMotionVertical = Input.GetAxis(axisFighterMotionVertical);
-        axisValueFighterMotionHorizontal = Input.GetAxis(axisFighterMotionHorizontal);
+        verticalAxisValue = Input.GetAxis(verticalAxisName);
+        horizontalAxisValue = Input.GetAxis(horizontalAxisName);
 #endif
 
         // We assume we do not need a rotation
         rotationVector = Vector3.zero;
 
         // Apply the force and calculate the rotation vector
-        if (axisValueFighterMotionVertical > 0) { // Up
-            body.AddForce(turnTargetUp * axisValueFighterMotionVertical, motionForceMode); // Applies a force vector in the direction of the desired motion
-            rotationVector += rotationTargetUp * axisValueFighterMotionVertical; // Set the rotation vector target
+        if (verticalAxisValue > 0) { // Up
+            body.AddForce(turnTargetUp * verticalAxisValue, motionForceMode); // Applies a force vector in the direction of the desired motion
+            rotationVector += rotationTargetUp * verticalAxisValue; // Set the rotation vector target
         }
 
-        if (axisValueFighterMotionVertical < 0) { // Down
-            body.AddForce(turnTargetDown * -axisValueFighterMotionVertical, motionForceMode);
-            rotationVector += rotationTargetDown * -axisValueFighterMotionVertical;
+        if (verticalAxisValue < 0) { // Down
+            body.AddForce(turnTargetDown * -verticalAxisValue, motionForceMode);
+            rotationVector += rotationTargetDown * -verticalAxisValue;
         }
 
-        if (axisValueFighterMotionHorizontal < 0) { // Right
-            body.AddForce(turnTargetRight * axisValueFighterMotionHorizontal, motionForceMode);
-            rotationVector += rotationTargetRight * axisValueFighterMotionHorizontal;
+        if (horizontalAxisValue < 0) { // Right
+            body.AddForce(turnTargetRight * horizontalAxisValue, motionForceMode);
+            rotationVector += rotationTargetRight * horizontalAxisValue;
         }
 
-        if (axisValueFighterMotionHorizontal > 0) { // Left
-            body.AddForce(turnTargetLeft * -axisValueFighterMotionHorizontal, motionForceMode);
-            rotationVector += rotationTargetLeft * -axisValueFighterMotionHorizontal;
+        if (horizontalAxisValue > 0) { // Left
+            body.AddForce(turnTargetLeft * -horizontalAxisValue, motionForceMode);
+            rotationVector += rotationTargetLeft * -horizontalAxisValue;
         }
 
         // Apply the rotation vector to the fighter

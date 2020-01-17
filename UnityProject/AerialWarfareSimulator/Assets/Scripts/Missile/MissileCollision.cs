@@ -13,16 +13,16 @@ public class MissileCollision : MonoBehaviour {
         explosionSound = GameObject.Find(this.name + "/Sounds/ExplosionSound").GetComponent<AudioSource>();
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnCollisionEnter(Collision collision) {
 
         // If the missiles hits an enemy
-        if(other.gameObject.tag == "Enemy") {
+        if(collision.collider.gameObject.tag == "Enemy") {
 
             // We play the explosion sound
             explosionSound.Play();
 
             // Destroy the enemy
-            Destroy(other.gameObject.transform.parent.gameObject);
+            Destroy(collision.collider.gameObject);
 
             // TODO: We must destroy de missile body, but keeping the explosion sound
         }
