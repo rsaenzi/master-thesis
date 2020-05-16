@@ -1,4 +1,4 @@
-![Header](/Assets/Aerial%20Warfare%20SImulator%20Splash%20Landscape.png)
+![Header](/Assets/Logo.jpg)
 
 # Evaluating the impact of Curriculum Learning on the training process for an intelligent agent in a videogame
 ## Maestría en Ingeniería de Sistemas y Computación, Modalidad Profundización. Universidad Nacional de Colombia - Sede Bogotá
@@ -7,10 +7,8 @@ Abstract: Nowadays there are several open challenges for machine learning techni
 
 Keywords: curriculum learning, continuation method, machine learning, reinforcement learning, aerial warfare, air combat, sparse rewards, playtesting, videogames, game mechanic, game engine, unity, unity machine learning agents, ml-agents
 
-### Current version of master's thesis:
+### Links:
 * http://bit.ly/rsaenzi-master-thesis
 * https://github.com/rsaenzi/MasterThesis
-
-### Links:
 * https://sites.google.com/view/rsaenzi-master-thesis/home
 * https://www.mendeley.com/community/rigobertosaenz-referencias/
