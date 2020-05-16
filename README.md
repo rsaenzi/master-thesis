@@ -1,5 +1,3 @@
-![Header](/Logo.jpg)
-
 <p align="center"><img src="/Logo.jpg"></p>
 
 # Evaluating the impact of Curriculum Learning on the training process for an intelligent agent in a videogame
