@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 
-# To run this file open a terminal and type ./run_experiments.sh
+# TO make this file executable run 'chmod +x play_soccer.sh'
+# To run this file open a terminal and run './play_soccer.sh'
 
 clear
 
@@ -24,7 +25,7 @@ echo
 
 echo
 echo 'Current Directory:'
-cd '/Users/rsaenz/Documents/Projects/MasterThesis/SoccerExperiments'
+cd '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments'
 pwd
 ls
 
@@ -41,11 +42,11 @@ python3 -m pip -V
 
 echo
 echo 'Running ML-Agents:'
-#mlagents-learn -h
-mlagents-learn config/trainer_config.yaml --run-id=experiment_run_1 
+mlagents-learn -h
+#mlagents-learn config/trainer_config.yaml --run-id=experiment_run_1 
 
-#--env '/Users/rsaenz/Documents/Projects/MasterThesis/SoccerExperiments/Executable'
-#--curriculum '/Users/rsaenz/Documents/Projects/MasterThesis/SoccerExperiments/Curriculum.yaml'
+#--env '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Executable'
+#--curriculum '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Curriculum.yaml'
 #--lesson 0
 #--run-id MyTrainingSessionId 
 #--num-envs 1
