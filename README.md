@@ -1,4 +1,4 @@
-<p align="center"><img src="/Logo.jpg"></p>
+<p align="center"><img src="/Banner.png"></p>
 
 # Evaluating the impact of Curriculum Learning on the training process for an intelligent agent in a videogame
 ## Maestría en Ingeniería de Sistemas y Computación, Modalidad Profundización. Universidad Nacional de Colombia - Sede Bogotá
