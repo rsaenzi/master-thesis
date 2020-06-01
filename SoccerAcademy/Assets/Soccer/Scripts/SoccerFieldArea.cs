@@ -48,7 +48,7 @@ public class SoccerFieldArea : MonoBehaviour
     IEnumerator ShowGoalUI()
     {
         if (goalTextUI) goalTextUI.SetActive(true);
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(1.00f);
         if (goalTextUI) goalTextUI.SetActive(false);
     }
 

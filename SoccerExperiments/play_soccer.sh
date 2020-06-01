@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# TO make this file executable run 'chmod +x play_soccer.sh'
+# To make this file executable run 'chmod +x play_soccer.sh'
 # To run this file open a terminal and run './play_soccer.sh'
 
 clear
@@ -42,8 +42,8 @@ python3 -m pip -V
 
 echo
 echo 'Running ML-Agents:'
-mlagents-learn -h
-#mlagents-learn config/trainer_config.yaml --run-id=experiment_run_1 
+#mlagents-learn -h
+mlagents-learn config/trainer_config.yaml --run-id=soccer_match_1
 
 #--env '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Executable'
 #--curriculum '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Curriculum.yaml'
