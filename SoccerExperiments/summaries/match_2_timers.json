@@ -1,0 +1,36 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1591047919",
+        "python_version": "3.7.3 (default, Apr 24 2020, 18:51:23) \n[Clang 11.0.3 (clang-1103.0.32.62)]",
+        "command_line_arguments": "/Users/rsaenz/Library/Python/3.7/bin/mlagents-learn TrainConfig.yaml --env SoccerAcademy --force --run-id match_2 --save-freq 50000 --num-envs 3 --no-graphics",
+        "mlagents_version": "0.16.1",
+        "mlagents_envs_version": "0.16.1",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "2.2.0",
+        "end_time_seconds": "1591047925"
+    },
+    "total": 5.888088671,
+    "count": 1,
+    "self": 1.8363908470000023,
+    "children": {
+        "run_training.setup": {
+            "total": 0.04825995099999858,
+            "count": 1,
+            "self": 0.04825995099999858
+        },
+        "TrainerController.start_learning": {
+            "total": 4.003437872999999,
+            "count": 1,
+            "self": 0.0023269499999987175,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 4.001110923000001,
+                    "count": 1,
+                    "self": 4.001110923000001
+                }
+            }
+        }
+    }
+}
