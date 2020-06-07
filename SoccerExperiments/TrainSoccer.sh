@@ -42,9 +42,8 @@ python3 -m pip -V
 
 echo
 echo 'Running ML-Agents:'
-#mlagents-learn -h
-mlagents-learn config/trainer_config.yaml --run-id match_4_clase --save-freq 50000 --num-envs 1
-#mlagents-learn TrainConfig.yaml --env SoccerAcademy --force --run-id match_2 --save-freq 50000 --num-envs 3 --no-graphics
+mlagents-learn TrainingConfig.yaml --env SoccerAcademy --run-id match_5 --save-freq 100000 --num-envs 1 --no-graphics # --force
+#mlagents-learn TrainingConfig.yaml --env SoccerAcademy --run-id match_X --save-freq 100000 --num-envs 3 --no-graphics --force
 
 echo
 echo 'Opening TensorBoard:'
