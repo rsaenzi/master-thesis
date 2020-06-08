@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Model: {fileID: 11400000, guid: b0a629580a0ab48a5a774f90ff1fb48b, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: SoccerTwos
+  m_BehaviorName: SoccerAcademy
   TeamId: 1
   m_UseChildSensors: 1
 --- !u!114 &114492261207303438
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_Bits: 4294967291
   m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 1, g: 0.5882353, b: 0, a: 1}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5
 --- !u!114 &9152743230243588598
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Model: {fileID: 11400000, guid: b0a629580a0ab48a5a774f90ff1fb48b, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: SoccerTwos
+  m_BehaviorName: SoccerAcademy
   TeamId: 0
   m_UseChildSensors: 1
 --- !u!114 &114850431417842684
@@ -843,8 +843,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   m_ObservationStacks: 3
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayHitColor: {r: 0, g: 0.2265501, b: 1, a: 1}
+  rayMissColor: {r: 0.39215687, g: 0, b: 1, a: 1}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5
 --- !u!114 &404683423509059512
@@ -3294,8 +3294,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   m_ObservationStacks: 3
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayHitColor: {r: 0, g: 0, b: 1, a: 1}
+  rayMissColor: {r: 0.39215687, g: 0, b: 1, a: 1}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5
 --- !u!1 &2016057044266316337
@@ -4688,6 +4688,6 @@ MonoBehaviour:
     m_Bits: 4294967291
   m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 1, g: 0.5882353, b: 0, a: 1}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5

@@ -42,7 +42,7 @@ python3 -m pip -V
 
 echo
 echo 'Running ML-Agents:'
-mlagents-learn TrainingConfig.yaml --env SoccerAcademy --run-id match_5 --save-freq 100000 --num-envs 1 --no-graphics # --force
+mlagents-learn TrainingConfig.yaml --env SoccerAcademy --run-id match_2 --save-freq 100000 --num-envs 1 --no-graphics # --force
 #mlagents-learn TrainingConfig.yaml --env SoccerAcademy --run-id match_X --save-freq 100000 --num-envs 3 --no-graphics --force
 
 echo
