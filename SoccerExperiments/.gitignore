@@ -1,3 +1,2 @@
-SoccerAcademy.app*
-/SoccerAcademy.app*
-.DS_Store
+*SoccerAcademy.app*
+*/SoccerAcademy.app*
