@@ -21,18 +21,18 @@
         <DeveloperData Value="AQAAAEY0LVhRUVotUEFDQy1WRzcyLVlUQkgtM01CSw=="/>
         <SerialMasked Value="F4-XQQZ-PACC-VG72-YTBH-XXXX"/>
         <StartDate Value="2018-01-11T00:00:00"/>
-        <UpdateDate Value="2020-06-11T17:52:12"/>
+        <UpdateDate Value="2020-06-11T17:26:27"/>
         <InitialActivationDate Value="2018-01-11T02:01:55"/>
         <LicenseVersion Value="6.x"/>
-        <ClientProvidedVersion Value="2019.1.0f2"/>
+        <ClientProvidedVersion Value="2019.3.0f6"/>
         <AlwaysOnline Value="false"/>
         <Entitlements>
             <Entitlement Ns="unity_editor" Tag="UnityPro" Type="EDITOR" ValidTo="2021-03-06T21:55:40"/>
             <Entitlement Ns="unity_editor" Tag="UnityPersonal" Type="EDITOR" ValidTo="9999-12-31T00:00:00"/>
         </Entitlements>
     </License>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#Terms"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>jz5jEu7QBMSrho02YO/j4G4Y3y8=</DigestValue></Reference></SignedInfo><SignatureValue>mLsnb/YU309gQ/U4nB2pdN7xkK20N2tn8q0Ru6fw0ofAnGvwP9Sxvs8n5JrcQj+uasGhg8V/08EB
-hg1aiyxOm5gIN/SGd+2xi8OpoejLohEya1/3Kb1VGJMTrM3f6DA6gGzLRBFMB+tRxN2GKfvpDZE+
-BADU0xlB8a09I435Ye3HRLG17bNtfFtdT/QcrZUfWUpMkq3Yu/kjWMr4JY4zY3f6vaMEnUyuOuHx
-qSeFBJU46dJVjS4FrQZliqp/skJI/s7LbrmhIKmt/dykVqRUdvpHdUdGhP8ipVO6pA1yiqJujZiG
-3iNAZ97ikvUuar7Mtegpn8MAA9zAsl9dYGbyZw==</SignatureValue></Signature></root>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#Terms"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>dhJhWG9McVsh/OSkYDRZFicw3vc=</DigestValue></Reference></SignedInfo><SignatureValue>aPP991/e+X0St7xqWwA2pj11PU5A0E7sfBeUdCO4e+MA8n5m7ZPxfL9vmqwJHLBJF2RLxylgifvr
+g+YawO59xntpWSNyL8JKbc4g36nmi2gyTTgjJqLd8oksewBmr37jAVZEpf3//YpTqksXM+RjgA8e
+SbsV7K8rdan/3p+n256yUXoNeKuCks9uOfTUe5Q4q1Vt7Y/dPm/uwtGcK0kSpNjGliPitf6KmJOl
+pnlEaekpz+ONAGog4Foo9OKLyE+WDhk5qhHLixsnC8ZNEEbe09kaMYDGyNEjnK2SzClEP6q9R6tC
+o1HoJ63bhqYK4qrysXjPdinyjrp3TWFPaXuCgA==</SignatureValue></Signature></root>
