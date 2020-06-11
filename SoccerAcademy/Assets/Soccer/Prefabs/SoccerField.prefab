@@ -351,12 +351,12 @@ GameObject:
   - component: {fileID: 114320493772006642}
   - component: {fileID: 9152743230243588598}
   m_Layer: 0
-  m_Name: PurpleStriker
+  m_Name: RedStriker
   m_TagString: purpleAgent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4277721046484044
 Transform:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_Bits: 4294967291
   m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 0.5882353, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 0, b: 0, a: 0.39215687}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5
 --- !u!114 &9152743230243588598
@@ -788,7 +788,7 @@ MonoBehaviour:
     VectorActionSize: 030000000300000003000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 4b365508a30b4440cb3aa388e18411c4, type: 3}
+  m_Model: {fileID: 11400000, guid: b0a629580a0ab48a5a774f90ff1fb48b, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SoccerAcademy
@@ -843,8 +843,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   m_ObservationStacks: 3
-  rayHitColor: {r: 0, g: 0.2265501, b: 1, a: 1}
-  rayMissColor: {r: 0.39215687, g: 0, b: 1, a: 1}
+  rayHitColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+  rayMissColor: {r: 0, g: 0.19607843, b: 1, a: 0.39215687}
   m_StartVerticalOffset: 0.5
   m_EndVerticalOffset: 0.5
 --- !u!114 &404683423509059512
@@ -4026,7 +4026,7 @@ GameObject:
   - component: {fileID: 1023485123796557062}
   - component: {fileID: 8734522883866558980}
   m_Layer: 0
-  m_Name: PurpleStriker (2)
+  m_Name: RedStriker (2)
   m_TagString: purpleAgent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
