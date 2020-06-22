@@ -1,0 +1,33 @@
+# Behaviour Name
+SoccerAcademy:
+
+    # Common Trainer Configurations
+    trainer: sac
+    summary_freq: 10000
+    batch_size: 128
+    buffer_size: 51200
+    hidden_units: 256
+    learning_rate: 0.001
+    learning_rate_schedule: constant
+    max_steps: 10000000
+    normalize: true
+    num_layers: 2
+    time_horizon: 128
+    
+    # SAC-specific Configurations
+    buffer_init_steps: 5000
+    init_entcoef: 0.1
+    save_replay_buffer: true
+    tau: 0.005
+    steps_per_update: 10
+
+    # Reward Signals
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+
+    # Memory-enhanced Agents
+    use_recurrent: true
+    memory_size: 128
+    sequence_length: 64
