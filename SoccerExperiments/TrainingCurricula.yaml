@@ -1,4 +1,5 @@
-SoccerTwos:
+# Behaviour Name
+SoccerAcademy:
   measure: progress
   thresholds: [0.05, 0.1]
   min_lesson_length: 100
