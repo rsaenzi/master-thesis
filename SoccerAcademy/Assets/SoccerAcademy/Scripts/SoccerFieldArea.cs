@@ -31,6 +31,8 @@ public class SoccerFieldArea : MonoBehaviour
     public GameObject goalTextUI;
     private Text goalTextComponent;
     private SoccerSettings m_SoccerSettings;
+    private Color blueAgentColor;
+    private Color redAgentColor;
     [HideInInspector]
     public bool canResetBall;
 
@@ -40,8 +42,12 @@ public class SoccerFieldArea : MonoBehaviour
     {
         canResetBall = true;
         m_SoccerSettings = FindObjectOfType<SoccerSettings>();
-        goalTextComponent = goalTextUI.transform.Find("TextTop").GetComponent<Text>();
+        blueAgentColor = m_SoccerSettings.blueMaterial.color;
+        redAgentColor = m_SoccerSettings.purpleMaterial.color;
+
         if (goalTextUI) { goalTextUI.SetActive(false); }
+        goalTextComponent = goalTextUI.transform.Find("TextTop").GetComponent<Text>();
+
         ballRb = ball.GetComponent<Rigidbody>();
         m_BallController = ball.GetComponent<SoccerBallController>();
         m_BallController.area = this;
@@ -53,12 +59,25 @@ public class SoccerFieldArea : MonoBehaviour
     IEnumerator ShowGoalUI()
     {
         if (goalTextUI) goalTextUI.SetActive(true);
-        yield return new WaitForSeconds(1.00f);
+        yield return new WaitForSeconds(1.50f);
         if (goalTextUI) goalTextUI.SetActive(false);
     }
 
     public void GoalTouched(AgentSoccer.Team scoredTeam)
     {
+        if (goalTextComponent != null)
+        {
+            if (scoredTeam.Equals(AgentSoccer.Team.Blue))
+            {
+                goalTextComponent.color = blueAgentColor;
+            }
+            else
+            {
+                goalTextComponent.color = redAgentColor;
+            }
+            StartCoroutine(ShowGoalUI());
+        }
+
         foreach (var ps in playerStates)
         {
             if (ps.agentScript.team == scoredTeam)
@@ -70,19 +89,6 @@ public class SoccerFieldArea : MonoBehaviour
                 ps.agentScript.AddReward(-1);
             }
             ps.agentScript.EndEpisode();  //all agents need to be reset
-        }
-
-        if (goalTextUI)
-        {
-            if (scoredTeam == AgentSoccer.Team.Blue)
-            {
-                goalTextComponent.color = m_SoccerSettings.blueMaterial.color;
-            }
-            else
-            {
-                goalTextComponent.color = m_SoccerSettings.purpleMaterial.color;
-            }
-            StartCoroutine(ShowGoalUI());
         }
     }
 
