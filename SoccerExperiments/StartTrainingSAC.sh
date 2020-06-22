@@ -42,7 +42,7 @@ python3 -m pip -V
 
 echo
 echo 'Running experiments with Soft Actor-Critic (SAC):'
-mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_no_cl --num-envs 1 --env builds/SoccerAcademy_5Fields_SmartRed
+mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_no_cl --num-envs 1 --env builds/SoccerAcademyV3_1Field_SmartRed
 #mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_exp_X --num-envs 3 --env builds/SoccerAcademy_2Fields_1Agent --save-freq 100000 --no-graphics --force --debug
 
 echo
