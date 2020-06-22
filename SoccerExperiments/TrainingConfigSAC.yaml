@@ -3,7 +3,7 @@ SoccerAcademy:
 
     # Common Trainer Configurations
     trainer: sac
-    summary_freq: 10000
+    summary_freq: 100000
     batch_size: 128
     buffer_size: 51200
     hidden_units: 256

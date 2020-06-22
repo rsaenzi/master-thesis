@@ -3,7 +3,7 @@ SoccerAcademy:
 
     # Common Trainer Configurations
     trainer: ppo
-    summary_freq: 10000
+    summary_freq: 100000
     batch_size: 2048
     buffer_size: 20480
     hidden_units: 512

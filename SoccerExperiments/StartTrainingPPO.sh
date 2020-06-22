@@ -42,8 +42,8 @@ python3 -m pip -V
 
 echo
 echo 'Running experiments with Proximal Policy Optimization (PPO):'
-mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_no_cl --num-envs 1 --env builds/SoccerAcademyV3_1Field_SmartRed
-#mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_exp_X --num-envs 3 --env builds/SoccerAcademy_2Fields_1Agent --save-freq 100000 --no-graphics --force --debug
+mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_no_cl --num-envs 1 --env builds/SoccerAcademyV3_1Field_SmartRed --force
+#mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_exp_X --num-envs 3 --env builds/SoccerAcademyV3_1Field_SmartRed --save-freq 100000 --no-graphics --force --debug
 
 echo
 echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO):'
