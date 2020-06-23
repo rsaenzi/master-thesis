@@ -15,7 +15,7 @@ public class AgentSoccer : Agent
     public enum Team
     {
         Blue = 0,
-        Purple = 1
+        Red = 1
     }
 
     public enum Position
@@ -49,6 +49,7 @@ public class AgentSoccer : Agent
     Vector3 m_Transform;
 
     EnvironmentParameters m_ResetParams;
+    private float opponentSpeed = 0;
 
     public override void Initialize()
     {
@@ -61,7 +62,7 @@ public class AgentSoccer : Agent
         }
         else
         {
-            team = Team.Purple;
+            team = Team.Red;
             m_Transform = new Vector3(transform.position.x, .5f, transform.position.z);
         }
         if (position == Position.Goalie)
@@ -146,7 +147,7 @@ public class AgentSoccer : Agent
             ForceMode.VelocityChange);
         }
         else {
-            agentRb.AddForce(dirToGo * m_SoccerSettings.redAgentRunSpeed,
+            agentRb.AddForce(dirToGo * opponentSpeed,
             ForceMode.VelocityChange);
         }
     }
@@ -226,7 +227,9 @@ public class AgentSoccer : Agent
 
         timePenalty = 0;
         m_BallTouch = m_ResetParams.GetWithDefault("ball_touch", 0);
-        if (team == Team.Purple)
+        opponentSpeed = m_ResetParams.GetWithDefault("opponent_speed", m_SoccerSettings.redAgentRunSpeed);
+
+        if (team == Team.Red)
         {
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
