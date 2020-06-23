@@ -1,0 +1,6 @@
+python3 -m pip install --upgrade pip --user
+python3 -m pip install --upgrade setuptools --user
+python3 -m pip install mlagents==0.16.1
+
+current: 0.16.1
+last:    0.17.0
