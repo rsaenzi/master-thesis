@@ -1,61 +1,61 @@
 {
     "name": "root",
     "gauges": {
-        "match_ppo_cl_SoccerAcademy.Policy.Entropy.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Policy.Entropy.mean": {
             "value": 0.4196923077106476,
             "min": 0.33435937762260437,
             "max": 3.281672954559326,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Environment.Lesson.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Environment.Lesson.mean": {
             "value": 4.0,
             "min": 0.0,
             "max": 4.0,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Environment.EpisodeLength.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Environment.EpisodeLength.mean": {
             "value": 11.349981456298677,
             "min": 11.180224062347783,
             "max": 587.6742857142857,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Policy.ExtrinsicValueEstimate.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Policy.ExtrinsicValueEstimate.mean": {
             "value": -0.32424360513687134,
             "min": -0.4221116304397583,
             "max": 0.5181958079338074,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Environment.CumulativeReward.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Environment.CumulativeReward.mean": {
             "value": 0.9279503250446249,
             "min": -0.6484788842107669,
             "max": 0.9535456078554158,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Policy.ExtrinsicReward.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Policy.ExtrinsicReward.mean": {
             "value": 0.9279503250446249,
             "min": -0.6484788842107669,
             "max": 0.9535456078554158,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Losses.ValueLoss.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Losses.ValueLoss.mean": {
             "value": 0.7622538208961487,
             "min": 0.00027213076828047633,
             "max": 0.7887516021728516,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Losses.PolicyLoss.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Losses.PolicyLoss.mean": {
             "value": 1.7750556468963623,
             "min": 0.052263855934143066,
             "max": 1.8392926454544067,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.Policy.LearningRate.mean": {
+        "match_ppo_cl_a_SoccerAcademy.Policy.LearningRate.mean": {
             "value": 0.0003000000142492354,
             "min": 0.0003000000142492354,
             "max": 0.0003000000724568963,
             "count": 100
         },
-        "match_ppo_cl_SoccerAcademy.IsTraining.mean": {
+        "match_ppo_cl_a_SoccerAcademy.IsTraining.mean": {
             "value": 1.0,
             "min": 1.0,
             "max": 1.0,
@@ -66,7 +66,7 @@
         "timer_format_version": "0.1.0",
         "start_time_seconds": "1592934022",
         "python_version": "3.7.3 (default, Apr 24 2020, 18:51:23) \n[Clang 11.0.3 (clang-1103.0.32.62)]",
-        "command_line_arguments": "/Users/rsaenzi/Library/Python/3.7/bin/mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_cl --num-envs 1 --env builds/SoccerAcademyV5_20Fields_CL --curriculum TrainingCurricula.yaml --no-graphics --force --debug",
+        "command_line_arguments": "/Users/rsaenzi/Library/Python/3.7/bin/mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_cl_a --num-envs 1 --env builds/SoccerAcademyV5_20Fields_CL --curriculum TrainingCurricula.yaml --no-graphics --force --debug",
         "mlagents_version": "0.16.1",
         "mlagents_envs_version": "0.16.1",
         "communication_protocol_version": "1.0.0",
