@@ -41,11 +41,11 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running experiments with Proximal Policy Optimization (PPO):'
-mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_cl --num-envs 1 --env builds/SoccerAcademyV5_20Fields_CL --curriculum TrainingCurricula.yaml --no-graphics --force --debug
+echo 'Running experiments with Proximal Policy Optimization (PPO) + Curriculum Learning B:'
+mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_cl_b --num-envs 1 --env builds/SoccerAcademyV6_20Fields_CL_B --curriculum TrainingCurriculaB.yaml --no-graphics --force --debug
 #mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_exp_X --num-envs 3 --env builds/SoccerAcademyV3_1Field_SmartRed --curriculum TrainingCurricula.yaml --save-freq 100000 --no-graphics --force --debug
 
 echo
-echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO):'
+echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curriculum Learning B:'
 open http://localhost:6006/
 tensorboard --logdir=summaries

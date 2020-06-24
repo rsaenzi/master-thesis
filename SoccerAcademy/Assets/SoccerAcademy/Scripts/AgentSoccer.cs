@@ -30,8 +30,6 @@ public class AgentSoccer : Agent
     float m_KickPower;
     int m_PlayerIndex;
     public SoccerFieldArea area;
-    // The coefficient for the reward for colliding with a ball. Set using curriculum.
-    float m_BallTouch;
     public Position position;
 
     const float k_Power = 2000f;
@@ -48,7 +46,9 @@ public class AgentSoccer : Agent
     BehaviorParameters m_BehaviorParameters;
     Vector3 m_Transform;
 
-    EnvironmentParameters m_ResetParams;
+    // The coefficient for the reward for colliding with a ball. Set using curriculum.
+    private EnvironmentParameters m_ResetParams;
+    private float ballTouchReward = 0;
     private float opponentSpeed = 0;
 
     public override void Initialize()
@@ -215,7 +215,11 @@ public class AgentSoccer : Agent
         }
         if (c.gameObject.CompareTag("ball"))
         {
-            AddReward(.2f * m_BallTouch);
+            if (team == Team.Blue)
+            {
+                AddReward(ballTouchReward);
+            }
+
             var dir = c.contacts[0].point - transform.position;
             dir = dir.normalized;
             c.gameObject.GetComponent<Rigidbody>().AddForce(dir * force);
@@ -226,7 +230,7 @@ public class AgentSoccer : Agent
     {
 
         timePenalty = 0;
-        m_BallTouch = m_ResetParams.GetWithDefault("ball_touch", 0);
+        ballTouchReward = m_ResetParams.GetWithDefault("ball_touch_reward", 0);
         opponentSpeed = m_ResetParams.GetWithDefault("opponent_speed", m_SoccerSettings.redAgentRunSpeed);
 
         if (team == Team.Red)

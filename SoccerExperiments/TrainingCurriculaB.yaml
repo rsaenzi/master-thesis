@@ -1,0 +1,10 @@
+# Behaviour Name
+SoccerAcademy:
+
+  # Curricula B
+  measure: progress
+  thresholds: [0.05, 0.10]
+  min_lesson_length: 100
+  signal_smoothing: true
+  parameters:
+    ball_touch_reward: [0.2, 0.1, 0.0]

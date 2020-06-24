@@ -41,11 +41,11 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running experiments with Soft Actor-Critic (SAC):'
-mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_cl --num-envs 1 --env builds/SoccerAcademyV5_20Fields_CL --curriculum TrainingCurricula.yaml --no-graphics --force
+echo 'Running experiments with Soft Actor-Critic (SAC) + Curriculum Learning B:'
+mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_cl_b --num-envs 1 --env builds/SoccerAcademyV6_20Fields_CL_B --curriculum TrainingCurriculaB.yaml --no-graphics --force
 #mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_exp_X --num-envs 3 --env builds/SoccerAcademyV3_1Field_SmartRed --curriculum TrainingCurricula.yaml --save-freq 100000 --no-graphics --force --debug
 
 echo
-echo 'Opening TensorBoard to see results for Soft Actor-Critic (SAC):'
+echo 'Opening TensorBoard to see results for Soft Actor-Critic (SAC) + Curriculum Learning B:'
 open http://localhost:6006/
 tensorboard --logdir=summaries
