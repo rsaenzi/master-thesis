@@ -215,7 +215,7 @@ public class AgentSoccer : Agent
         }
         if (c.gameObject.CompareTag("ball"))
         {
-            if (team == Team.Blue)
+            if (team == Team.Blue && ballTouchReward > 0)
             {
                 AddReward(ballTouchReward);
             }
