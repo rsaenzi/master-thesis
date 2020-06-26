@@ -44,7 +44,7 @@ public class AgentSoccer : Agent
     public Rigidbody agentRb;
     SoccerSettings m_SoccerSettings;
     BehaviorParameters m_BehaviorParameters;
-    Vector3 m_Transform;
+    private Vector3 initPosition;
 
     // The coefficient for the reward for colliding with a ball. Set using curriculum.
     private EnvironmentParameters m_ResetParams;
@@ -58,12 +58,12 @@ public class AgentSoccer : Agent
         if (m_BehaviorParameters.TeamId == (int)Team.Blue)
         {
             team = Team.Blue;
-            m_Transform = new Vector3(transform.position.x, .5f, transform.position.z);
+            initPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
         }
         else
         {
             team = Team.Red;
-            m_Transform = new Vector3(transform.position.x, .5f, transform.position.z);
+            initPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
         }
         if (position == Position.Goalie)
         {
@@ -241,7 +241,10 @@ public class AgentSoccer : Agent
         {
             transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
-        transform.position = m_Transform;
+
+        Vector3 startPosition = new Vector3(initPosition.x, initPosition.y, initPosition.z + UnityEngine.Random.Range(-1.0f, 1.0f));
+        transform.position = startPosition;
+
         agentRb.velocity = Vector3.zero;
         agentRb.angularVelocity = Vector3.zero;
         SetResetParameters();
