@@ -442,7 +442,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 3000
+  MaxStep: 20000
   team: 0
   area: {fileID: 114559182131992928}
   position: 2
@@ -810,7 +810,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 3000
+  MaxStep: 20000
   team: 1
   area: {fileID: 114559182131992928}
   position: 2

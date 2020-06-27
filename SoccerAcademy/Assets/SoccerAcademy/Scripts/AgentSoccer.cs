@@ -50,6 +50,11 @@ public class AgentSoccer : Agent
     private EnvironmentParameters m_ResetParams;
     private float ballTouchReward = 0;
     private float opponentSpeed = 0;
+    private float opponentExist = 0;
+
+    // Opponent Only
+    private Collider opponentCollider;
+    private MeshRenderer opponentRenderer;
 
     public override void Initialize()
     {
@@ -95,10 +100,22 @@ public class AgentSoccer : Agent
         playerState.playerIndex = m_PlayerIndex;
 
         m_ResetParams = Academy.Instance.EnvironmentParameters;
+
+        if (team == Team.Red)
+        {
+            opponentCollider = this.GetComponent<Collider>();
+            opponentRenderer = transform.Find("AgentCube_Purple").GetComponent<MeshRenderer>();
+        }
     }
 
     public void MoveAgent(float[] act)
     {
+        // Opponent Exist
+        if (team == Team.Red && opponentExist == 0)
+        {
+            return;
+        }
+
         var dirToGo = Vector3.zero;
         var rotateDir = Vector3.zero;
 
@@ -233,6 +250,14 @@ public class AgentSoccer : Agent
         ballTouchReward = m_ResetParams.GetWithDefault("ball_touch_reward", 0);
         opponentSpeed = m_ResetParams.GetWithDefault("opponent_speed", m_SoccerSettings.redAgentRunSpeed);
 
+        // Deactivate opponent
+        if (team == Team.Red)
+        {
+            opponentExist = m_ResetParams.GetWithDefault("opponent_exist", 1);
+            setOpponentActive(opponentExist == 1);
+        }
+
+
         if (team == Team.Red)
         {
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
@@ -248,6 +273,15 @@ public class AgentSoccer : Agent
         agentRb.velocity = Vector3.zero;
         agentRb.angularVelocity = Vector3.zero;
         SetResetParameters();
+    }
+
+    private void setOpponentActive(bool isActive) {
+
+        if (team == Team.Red)
+        {
+            opponentCollider.enabled = isActive;
+            opponentRenderer.enabled = isActive;
+        }
     }
 
     public void SetResetParameters()
