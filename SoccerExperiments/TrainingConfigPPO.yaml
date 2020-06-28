@@ -28,3 +28,5 @@ SoccerAcademy:
 
     # Memory-enhanced Agents
     use_recurrent: false
+    memory_size: 128
+    sequence_length: 128
