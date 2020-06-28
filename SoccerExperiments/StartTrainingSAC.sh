@@ -24,7 +24,6 @@ echo '--------------------------------------------------------------------------
 echo
 
 echo
-echo 'Current Directory:'
 cd '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments'
 pwd
 ls
@@ -41,10 +40,11 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running experiments with Soft Actor-Critic (SAC) + Curriculum Learning A+B:'
-mlagents-learn TrainingConfigSAC.yaml --run-id match_sac_cl_ab --num-envs 1 --env builds/SoccerAcademyV7_10Fields_CL_AB --curriculum TrainingCurriculaAB.yaml --no-graphics --force
+echo 'Running 100M experiments with Soft Actor-Critic (SAC) only:'
+mlagents-learn TrainingConfigSAC.yaml --run-id SAC_only --num-envs 1 --env builds/SoccerAcademyV10_100Fields --no-graphics --force
+# --curriculum TrainingCurriculaAB.yaml
 
 echo
-echo 'Opening TensorBoard to see results for Soft Actor-Critic (SAC) + Curriculum Learning A+B:'
+echo 'Opening TensorBoard to see results for Soft Actor-Critic (PPO) only:'
 open http://localhost:6006/
 tensorboard --logdir=summaries

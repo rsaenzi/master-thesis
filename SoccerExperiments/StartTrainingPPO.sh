@@ -24,7 +24,6 @@ echo '--------------------------------------------------------------------------
 echo
 
 echo
-echo 'Current Directory:'
 cd '/Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments'
 pwd
 ls
@@ -41,10 +40,11 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running experiments with Proximal Policy Optimization (PPO) + Curriculum Learning A+B:'
-mlagents-learn TrainingConfigPPO.yaml --run-id match_ppo_cl_ab --num-envs 1 --env builds/SoccerAcademyV7_10Fields_CL_AB --curriculum TrainingCurriculaAB.yaml --no-graphics --force --debug
+echo 'Running 100M experiments with Proximal Policy Optimization (PPO) only:'
+mlagents-learn TrainingConfigPPO.yaml --run-id PPO_only --num-envs 1 --env builds/SoccerAcademyV10_100Fields --no-graphics --force
+# --curriculum TrainingCurriculaAB.yaml
 
 echo
-echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curriculum Learning A+B:'
+echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) only:'
 open http://localhost:6006/
 tensorboard --logdir=summaries
