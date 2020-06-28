@@ -41,7 +41,7 @@ python3 -m pip -V
 
 echo
 echo 'Running 100M experiments with Proximal Policy Optimization (PPO) only:'
-mlagents-learn TrainingConfigPPO.yaml --run-id PPO_only --num-envs 1 --env builds/SoccerAcademyV10_100Fields --no-graphics --force
+mlagents-learn TrainingConfigPPO.yaml --run-id PPO_only --num-envs 1 --env builds/SoccerAcademyV10_4Fields --no-graphics --force
 # --curriculum TrainingCurriculaAB.yaml
 
 echo
