@@ -7,13 +7,22 @@ public class GeneralScore : MonoBehaviour
 {
     private ulong scoreBlue = 0;
     private ulong scoreRed = 0;
-    public Text textBlue;
-    public Text textRed;
+    private Text textBlue;
+    private Text textRed;
 
     void Awake()
     {
-        textBlue.text = scoreBlue.ToString();
-        textRed.text = scoreRed.ToString();
+        textBlue = this.transform.Find("ScoreBlue").GetComponent<Text>();
+        textRed  = this.transform.Find("ScoreRed").GetComponent<Text>();
+
+        if (textBlue != null)
+        {
+            textBlue.text = scoreBlue.ToString();
+        }
+        if (textRed != null)
+        {
+            textRed.text = scoreRed.ToString();
+        }
     }
 
     public void GoalTouched(AgentSoccer.Team team) {
@@ -21,20 +30,28 @@ public class GeneralScore : MonoBehaviour
         if (team.Equals(AgentSoccer.Team.Blue))
         {
             scoreBlue += 1;
-            textBlue.text = scoreBlue.ToString();
+            if (scoreBlue == ulong.MaxValue)
+            {
+                scoreBlue = 0;
+            }
+
+            if (textBlue != null)
+            {
+                textBlue.text = scoreBlue.ToString();
+            }
         }
         else {
-            scoreRed += 1;
-            textRed.text = scoreRed.ToString();
-        }
 
-        if (scoreBlue == ulong.MaxValue)
-        {
-            scoreBlue = 0;
-        }
-        if (scoreRed == ulong.MaxValue)
-        {
-            scoreRed = 0;
+            scoreRed += 1;
+            if (scoreRed == ulong.MaxValue)
+            {
+                scoreRed = 0;
+            }
+
+            if (textRed != null)
+            {
+                textRed.text = scoreRed.ToString();
+            }
         }
     }
 }

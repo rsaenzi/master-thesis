@@ -19,12 +19,20 @@ public class SoccerBallController : MonoBehaviour
         if (col.gameObject.CompareTag(purpleGoalTag)) //ball touched purple goal
         {
             area.GoalTouched(AgentSoccer.Team.Blue);
-            scoreCounter.GoalTouched(AgentSoccer.Team.Blue);
+
+            if (scoreCounter != null)
+            {
+                scoreCounter.GoalTouched(AgentSoccer.Team.Blue);
+            }
         }
         if (col.gameObject.CompareTag(blueGoalTag)) //ball touched blue goal
         {
             area.GoalTouched(AgentSoccer.Team.Red);
-            scoreCounter.GoalTouched(AgentSoccer.Team.Red);
+
+            if (scoreCounter != null)
+            {
+                scoreCounter.GoalTouched(AgentSoccer.Team.Red);
+            }
         }
     }
 }
