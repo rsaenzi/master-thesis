@@ -5,7 +5,7 @@
 --float-precision=Standard
 --format=MachO
 --debug
---output=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/SoccerAcademyV10_100Fields.app/Contents/Plugins/lib_burst_generated
+--output=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/SoccerAcademyV10_4Fields.app/Contents/Plugins/lib_burst_generated
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/Unity.Barracuda.dll
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
@@ -26,7 +26,7 @@
 --float-precision=Standard
 --format=MachO
 --debug
---output=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/SoccerAcademyV10_100Fields.app/Contents/Plugins/lib_burst_generated
+--output=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/SoccerAcademyV10_4Fields.app/Contents/Plugins/lib_burst_generated
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/Unity.Barracuda.dll
 --root-assembly=/Users/rsaenz/Documents/Projects/master-thesis/SoccerAcademy/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
