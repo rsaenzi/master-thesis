@@ -1,6 +1,61 @@
-python3 -m pip install --upgrade pip --user
-python3 -m pip install --upgrade setuptools --user
-python3 -m pip install mlagents==0.16.1
+# Connect to Virtual Machine using SSH
+gcloud compute ssh instance-for-ml-agents
 
-current: 0.16.1
-last:    0.17.0
+# Launch Jupyter Notebooks web client
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser &
+
+# Open Jupyter Notebook web client
+http://104.154.139.227:8888/
+http://104.154.139.227:8888/?token=89d84f5aef45fce475c17bc6ddd2bcd4d93aa10906c30c1e
+
+# Send notebook to server
+scp -rp /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Experiments.ipynb rsaenz@104.154.139.227:/home/rsaenz/
+
+
+
+# Dependencies
+sudo apt-get update -y
+sudo apt-get install -y libarchive-tools
+sudo apt-get install -y libgtk-3-dev
+
+sudo pip install --upgrade
+	ipython
+	google-colab
+	prompt-toolkit
+	google-auth
+	nvidia-smi
+
+steps para eliminar todo lo descargado	
+	rm -r TrainingConfigPPO.yaml
+	rm -r TrainingCurriculaA.yaml
+	rm -r UnityInstaller
+	rm -r -f -d master-thesis
+	rm -r -f -d ml-agents
+
+
+# Install Unity
+sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
+
+# Copy license file
+cp /home/rsaenz/UnityLicense.x.ulf /opt/Editor/Unity/Editor
+
+# Move license file
+mv 'Unity_v2019.1.0f2.alf' '/home/rsaenz/'
+
+# Add Unity to project path
+# Run 'cd /opt/Editor/Unity/Editor; ./Unity'
+export PATH=$PATH:/opt/Editor/Unity/Editor
+echo $PATH
+
+# Request license
+./Unity -nographics -logFile -batchmode -createManualActivationFile
+
+# Install license
+./Unity -nographics -logFile -batchmode -manualLicenseFile '/home/rsaenz/UnityLicense.x.ulf'
+
+# Open Project (Update API)
+Unity -nographics -logFile -batchmode -accept-apiupdate -buildTarget Linux64 -projectPath '/master-thesis/SoccerAcademy' -quit
+
+# Build Project
+Unity -nographics -logFile -batchmode -buildTarget Linux64 -buildLinux64Player 'SoccerAcademy.x86_64' -quit
+
