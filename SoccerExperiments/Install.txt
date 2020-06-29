@@ -1,37 +1,44 @@
 # Connect to Virtual Machine using SSH
 gcloud compute ssh instance-for-ml-agents
 
+# Delete previous files
+rm -r -f -d models
+rm -r -f -d summaries
+rm -r -f -d master-thesis
+
+# Download master-thesis
+git clone -b master https://github.com/rsaenzi/master-thesis.git
+
+# Test ml-agents
+mlagents-learn -h
+
+# Run experiments
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux/Linux_v11_4fields.x86_64' --run-id=PPO_CurriculaA --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaA.yaml' --no-graphics --force
+
+# Get experiments (run on other terminal windows that has not a ssh open connection)
+gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/models /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
+gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/summaries /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
+
+
+
+---------------------------
+
+
+
 # Launch Jupyter Notebooks web client
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser &
 
 # Open Jupyter Notebook web client
 http://104.154.139.227:8888/
-http://104.154.139.227:8888/?token=89d84f5aef45fce475c17bc6ddd2bcd4d93aa10906c30c1e
+http://104.154.139.227:8888/?token=37536be81c20f363915649de2e3c8e9552c32216fcb7e925
 
-# Send notebook to server
-scp -rp /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/Experiments.ipynb rsaenz@104.154.139.227:/home/rsaenz/
+# Create SSH key
+cd /home/rsaenz/.ssh/
+ssh-keygen -t rsa -f ~/.ssh/ssh_key_compute_engine -C rsaenz
+cat ssh_key_compute_engine.pub
 
-
-
-# Dependencies
-sudo apt-get update -y
-sudo apt-get install -y libarchive-tools
-sudo apt-get install -y libgtk-3-dev
-
-sudo pip install --upgrade
-	ipython
-	google-colab
-	prompt-toolkit
-	google-auth
-	nvidia-smi
-
-steps para eliminar todo lo descargado	
-	rm -r TrainingConfigPPO.yaml
-	rm -r TrainingCurriculaA.yaml
-	rm -r UnityInstaller
-	rm -r -f -d master-thesis
-	rm -r -f -d ml-agents
-
+# To edit a file
+vim /etc/vsftpd.conf
 
 # Install Unity
 sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
@@ -45,6 +52,7 @@ mv 'Unity_v2019.1.0f2.alf' '/home/rsaenz/'
 # Add Unity to project path
 # Run 'cd /opt/Editor/Unity/Editor; ./Unity'
 export PATH=$PATH:/opt/Editor/Unity/Editor
+export PATH=$PATH:/usr/local/lib/python3.7/
 echo $PATH
 
 # Request license
@@ -59,3 +67,5 @@ Unity -nographics -logFile -batchmode -accept-apiupdate -buildTarget Linux64 -pr
 # Build Project
 Unity -nographics -logFile -batchmode -buildTarget Linux64 -buildLinux64Player 'SoccerAcademy.x86_64' -quit
 
+# Run experiments
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux/Linux_v11_4fields.x86_64' --run-id=PPO_curriculaA_test --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaA.yaml' --no-graphics --force
