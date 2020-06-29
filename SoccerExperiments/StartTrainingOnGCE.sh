@@ -24,15 +24,15 @@ echo '--------------------------------------------------------------------------
 echo
 
 # Delete previous results
+echo 'Old experiments and master-thesis repo deleted'
 rm -r -f -d models
 rm -r -f -d summaries
+rm -r -f -d master-thesis
+ls
+echo
 
 # Download master-thesis
-rm -r -f -d master-thesis
 git clone -b master https://github.com/rsaenzi/master-thesis.git
-
-# Test ml-agents
-mlagents-learn -h
 
 # Run experiments
 echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula A:'

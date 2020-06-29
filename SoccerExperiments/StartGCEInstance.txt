@@ -1,6 +1,21 @@
 # Connect to Virtual Machine using SSH
 gcloud compute ssh instance-for-ml-agents
 
+# Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL WINDOW)
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/
+
+# Make .sh file executable
+chmod +x StartTrainingOnGCE.sh
+
+# Run .sh file
+./StartTrainingOnGCE.sh
+
+
+
+---------------------------
+
+
+
 # Delete previous files
 rm -r -f -d models
 rm -r -f -d summaries
@@ -18,12 +33,6 @@ mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='m
 # Get experiments (run on other terminal windows that has not a ssh open connection)
 gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/models /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
 gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/summaries /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
-
-
-
----------------------------
-
-
 
 # Launch Jupyter Notebooks web client
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser &
