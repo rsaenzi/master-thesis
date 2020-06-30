@@ -40,11 +40,10 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running 100M experiments with Proximal Policy Optimization (PPO) only:'
-mlagents-learn TrainingConfigPPO.yaml --run-id PPO_only --num-envs 1 --env builds/SoccerAcademyV10_4Fields --no-graphics --force
-# --curriculum TrainingCurriculaAB.yaml
+echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula A'
+mlagents-learn TrainingConfigPPO.yaml --run-id PPO_CurriculaA --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaA.yaml --no-graphics --force
 
 echo
-echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) only:'
+echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curricula A'
 open http://localhost:6006/
 tensorboard --logdir=summaries

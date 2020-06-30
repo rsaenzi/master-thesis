@@ -8,7 +8,7 @@ gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/Socc
 chmod +x StartTrainingOnGCE.sh
 
 # Run .sh file
-./StartTrainingOnGCE.sh
+nohup ./StartTrainingOnGCE.sh &
 
 
 

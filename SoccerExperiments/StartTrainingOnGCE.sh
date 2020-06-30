@@ -35,8 +35,8 @@ echo
 git clone -b master https://github.com/rsaenzi/master-thesis.git
 
 # Run experiments
-echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula A:'
-mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux/Linux_v11_4fields.x86_64' --run-id=PPO_CurriculaA --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaA.yaml' --no-graphics --force
+echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curriculums A+B:'
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux_exe1/Linux_v12_9fields_Exe1.x86_64' --run-id=PPO_CurriculumsAB --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaAB.yaml' --no-graphics --force
 
 # Shutdown the instance to avoid more charges
 sleep 30
