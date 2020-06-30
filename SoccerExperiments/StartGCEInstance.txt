@@ -1,5 +1,12 @@
+# ----------------------------------------------------------
+# Steps to run experiments on Google Compute Engine instance
+# ----------------------------------------------------------
+
 # Connect to Virtual Machine using SSH
 gcloud compute ssh instance-for-ml-agents
+
+# Delete old StartTrainingOnGCE.sh file
+rm -r -f StartTrainingOnGCE.sh
 
 # Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL WINDOW)
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/
@@ -7,8 +14,11 @@ gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/Socc
 # Make .sh file executable
 chmod +x StartTrainingOnGCE.sh
 
-# Run .sh file
+# Run .sh file independenly of SSH connection
 nohup ./StartTrainingOnGCE.sh &
+
+# Monitor log file
+tail -f nohup.out
 
 
 
