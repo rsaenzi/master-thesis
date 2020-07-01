@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
-# To make this file executable run 'chmod +x StartTrainingSAC.sh'
-# To run this file open a terminal and run './StartTrainingSAC.sh'
+# chmod +x StartTrainingSAC.sh
+# nohup ./StartTrainingSAC.sh &
+# tail -f nohup.out
 
 clear
 
@@ -40,11 +41,10 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running 100M experiments with Soft Actor-Critic (SAC) only:'
-mlagents-learn TrainingConfigSAC.yaml --run-id SAC_only --num-envs 1 --env builds/SoccerAcademyV10_4Fields --no-graphics --force
-# --curriculum TrainingCurriculaAB.yaml
+echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curricula A'
+mlagents-learn TrainingConfigSAC.yaml --run-id PPO_CurriculaA --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaA.yaml --no-graphics --force
 
 echo
-echo 'Opening TensorBoard to see results for Soft Actor-Critic (PPO) only:'
+echo 'Opening TensorBoard to see results for Soft Actor-Critic (PPO) + Curricula A'
 open http://localhost:6006/
 tensorboard --logdir=summaries

@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
-# To make this file executable run 'chmod +x StartTrainingPPO.sh'
-# To run this file open a terminal and run './StartTrainingPPO.sh'
+# chmod +x StartTrainingPPO.sh
+# nohup ./StartTrainingPPO.sh &
+# tail -f nohup.out
 
 clear
 
@@ -40,10 +41,10 @@ python3 --version
 python3 -m pip -V
 
 echo
-echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula A'
-mlagents-learn TrainingConfigPPO.yaml --run-id PPO_CurriculaA --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaA.yaml --no-graphics --force
+echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula B'
+mlagents-learn TrainingConfigPPO.yaml --run-id PPO_CurriculaB --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaB.yaml --no-graphics --force
 
 echo
-echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curricula A'
+echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curricula B'
 open http://localhost:6006/
 tensorboard --logdir=summaries
