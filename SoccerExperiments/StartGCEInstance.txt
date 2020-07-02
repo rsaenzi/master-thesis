@@ -4,22 +4,33 @@
 
 # Connect to Virtual Machine using SSH
 gcloud compute ssh instance-for-ml-agents
+gcloud compute ssh second-instance-for-ml-agents
 
-# Delete old StartTrainingOnGCE.sh file
+# Delete old experiment files
 rm -r -f StartTrainingOnGCE.sh
+rm -r -f nohup.out
+rm -r -f -d models
+rm -r -f -d summaries
+rm -r -f -d master-thesis
 
 # Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL WINDOW)
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh second-instance-for-ml-agents:/home/rsaenz/
+
+# Verify StartTrainingOnGCE.sh content
+cat StartTrainingOnGCE.sh
 
 # Make .sh file executable
 chmod +x StartTrainingOnGCE.sh
 
 # Run .sh file independenly of SSH connection
-nohup ./StartTrainingOnGCE.sh -v &
+nohup ./StartTrainingOnGCE.sh &
 
 # Monitor log file
 tail -f nohup.out
 
+# Check if sh file is running
+ps aux | grep "StartTrainingOnGCE.sh"
 
 
 ---------------------------
