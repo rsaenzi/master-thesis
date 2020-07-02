@@ -15,7 +15,7 @@ gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/Socc
 chmod +x StartTrainingOnGCE.sh
 
 # Run .sh file independenly of SSH connection
-nohup ./StartTrainingOnGCE.sh &
+nohup ./StartTrainingOnGCE.sh -v &
 
 # Monitor log file
 tail -f nohup.out
