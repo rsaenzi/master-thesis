@@ -35,16 +35,10 @@ export PATH=$PATH:/Users/rsaenz/Library/Python/3.7/bin
 echo $PATH
 
 echo
-echo 'Checking Python version:'
-which -a python
-python3 --version
-python3 -m pip -V
+echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curriculums A+B'
+mlagents-learn TrainingConfigPPO.yaml --run-id PPO_CurriculumsAB --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaAB.yaml --no-graphics --force
 
 echo
-echo 'Running 100M experiments with Proximal Policy Optimization (PPO) + Curricula B'
-mlagents-learn TrainingConfigPPO.yaml --run-id PPO_CurriculaB --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaB.yaml --no-graphics --force
-
-echo
-echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curricula B'
+echo 'Opening TensorBoard to see results for Proximal Policy Optimization (PPO) + Curriculums A+B'
 open http://localhost:6006/
 tensorboard --logdir=summaries

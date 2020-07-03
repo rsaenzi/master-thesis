@@ -35,12 +35,6 @@ export PATH=$PATH:/Users/rsaenz/Library/Python/3.7/bin
 echo $PATH
 
 echo
-echo 'Checking Python version:'
-which -a python
-python3 --version
-python3 -m pip -V
-
-echo
 echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curricula A'
 mlagents-learn TrainingConfigSAC.yaml --run-id PPO_CurriculaA --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaA.yaml --no-graphics --force
 
