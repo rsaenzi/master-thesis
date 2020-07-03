@@ -35,6 +35,12 @@ ps aux | grep "StartTrainingOnGCE.sh"
 
 ---------------------------
 
+# Connect to my macbook
+ssh rsaenzi@MacBook-Pro-Rigoberto.local
+cd Documents/Projects/master-thesis/SoccerExperiments
+tail -f nohup.out
+
+	Control+D to close connection
 
 
 # Delete previous files
