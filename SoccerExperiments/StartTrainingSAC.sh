@@ -35,10 +35,10 @@ export PATH=$PATH:/Users/rsaenz/Library/Python/3.7/bin
 echo $PATH
 
 echo
-echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curricula A'
-mlagents-learn TrainingConfigSAC.yaml --run-id PPO_CurriculaA --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaA.yaml --no-graphics --force
+echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curricula B:'
+mlagents-learn TrainingConfigSAC.yaml --run-id SAC_CurriculaB --num-envs 1 --env builds/mac_exe1/macOS_V12_9Fields_Exe1 --curriculum TrainingCurriculaB.yaml --no-graphics --force
 
 echo
-echo 'Opening TensorBoard to see results for Soft Actor-Critic (PPO) + Curricula A'
+echo 'Opening TensorBoard to see results for Soft Actor-Critic (SAC) + Curricula B:'
 open http://localhost:6006/
 tensorboard --logdir=summaries
