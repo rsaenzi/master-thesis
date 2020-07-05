@@ -8,7 +8,7 @@
 Curriculum learning is a technique that can increase the learning speed of an intelligent agent that is trained using reinforcement learning to learn a behavior policy to play a video game in an optimal way. This technique can be seen as a special form of transfer learning and it is based on the idea of training using easier examples first, then using the harder complex ones later, to guide the optimization process. This hypothesis is tested in a 3D 1-vs-1 soccer video game running in Unity, where an agent is trained using two different reinforcement learning algorithms to play an already trained opponent agent. Two curriculums were designed for the soccer video game, the agent was trained with and without using these curriculums. Results indicate that in some cases having a curriculum can increase the learning rate, requiring fewer training steps to get the same performance statistics as the non-curriculum approach.
 
 ### Keywords
-Reinforcement Learning, Curriculum Learning, Continuation Method, Sparse Rewards, Deep Learning, Proximal Policy Optimization, Video Games, Unity Machine Learning Agents, Unity ML-Agents SDK, Unity Engine, Game AI
+Reinforcement Learning, Curriculum Learning, Continuation Method, Sparse Rewards, Deep Learning, Proximal Policy Optimization, Soft Actor-Critic, Video Games, Unity Machine Learning Agents, Unity ML-Agents SDK, Unity Engine, Game AI
 
 ### Links:
 * Document: https://bit.ly/rsaenzi-master-thesis
