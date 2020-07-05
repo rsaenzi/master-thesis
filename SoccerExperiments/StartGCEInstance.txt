@@ -3,11 +3,9 @@
 # ----------------------------------------------------------
 
 # Connect to Virtual Machine using SSH
-gcloud compute ssh instance-for-ml-agents
-gcloud compute ssh duplicate-for-ml-agents
+gcloud compute ssh instance-for-ml-agents --zone="us-central1-c" --project="master-thesis-456789"
+gcloud compute ssh duplicate-for-ml-agents --zone="us-west1-c" --project="master-thesis-456789"
 
-ssh instance-for-ml-agents.us-central1-c.master-thesis-456789
-ssh duplicate-for-ml-agents.us-west1-c.master-thesis-456789
 
 # Delete old experiment files
 rm -r -f StartTrainingOnGCE.sh
@@ -17,8 +15,8 @@ rm -r -f -d summaries
 rm -r -f -d master-thesis
 
 # Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL WINDOW)
-gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/
-gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh duplicate-for-ml-agents:/home/rsaenz/
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/ --zone="us-central1-c" --project="master-thesis-456789"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh duplicate-for-ml-agents:/home/rsaenz/ --zone="us-west1-c" --project="master-thesis-456789"
 
 # Verify StartTrainingOnGCE.sh content
 cat StartTrainingOnGCE.sh
@@ -35,6 +33,15 @@ tail -f nohup.out
 # Check if sh file is running
 ps aux | grep "StartTrainingOnGCE.sh"
 
+
+---------------------------
+
+
+# Connect to my macbook
+ssh rsaenzi@MacBook-Pro-Rigoberto.local
+cd Documents/Projects/master-thesis/SoccerExperiments
+tail -f nohup.out
+	Control+D to close connection
 
 
 ---------------------------
@@ -70,14 +77,28 @@ sudo apt-get install pulseaudio
 sudo apt-get install libarchive-tools
 sudo apt-get install libgtk-3-dev
 
+sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
+
+cd /opt/Editor/Unity/Editor
+sudo ./Unity -nographics -logFile -batchmode -createManualActivationFile
+
+mv Unity_v2019.1.0f2.alf /home/rsaenz
+mv Unity_v2019.1.0f2.alf UnityRequest.alf
+gcloud compute scp --recurse duplicate-for-ml-agents:/home/rsaenz/UnityRequest.alf /Users/rsaenz/Desktop --zone="us-west1-c" --project="master-thesis-456789"
+
+# Activation fails if the licence request file has a different name than the original, so must be reverted back
+
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicence.ulf duplicate-for-ml-agents:/home/rsaenz/ --zone="us-west1-c" --project="master-thesis-456789"
+
+sudo cp -r "UnityLicence.ulf"  "/opt/Editor/Unity/Editor"
+
+sudo ./Unity -nographics -logFile -batchmode -manualLicenseFile UnityLicense.ulf
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh duplicate-for-ml-agents:/home/rsaenz/
+
 
 ---------------------------
 
-# Connect to my macbook
-ssh rsaenzi@MacBook-Pro-Rigoberto.local
-cd Documents/Projects/master-thesis/SoccerExperiments
-tail -f nohup.out
-	Control+D to close connection
 
 # Delete previous files
 rm -r -f -d models
