@@ -2,9 +2,23 @@
 # Steps to run experiments on Google Compute Engine instance
 # ----------------------------------------------------------
 
+# To change active configuration
+gcloud config configurations activate unal-compute-engine-account
+gcloud config configurations activate beto-compute-engine-account
+
+# See active configuration
+gcloud config list
+
+# See instances
+gcloud compute instances list
+
 # Connect to Virtual Machine using SSH
-gcloud compute ssh instance-for-ml-agents --zone="us-central1-c" --project="master-thesis-456789"
-gcloud compute ssh duplicate-for-ml-agents --zone="us-west1-c" --project="master-thesis-456789"
+gcloud compute ssh "instance-for-ml-agents" --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute ssh "duplicate-for-ml-agents" --zone="us-west1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute ssh "unal-one-ml-agents" --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+
+-----------------------------
 
 
 # Delete old experiment files
@@ -46,22 +60,25 @@ tail -f nohup.out
 
 ---------------------------
 
+SETUP NEW INSTANCE FOR UNITY ML
+
 sudo python3 -m pip install --upgrade pip
 
 sudo python3 -m pip install tensorflow
-sudo python3 -m pip install --upgrade ipython
-sudo python3 -m pip install --upgrade google-colab
-sudo python3 -m pip install --upgrade prompt-toolkit
-sudo python3 -m pip install --upgrade google-auth
-sudo python3 -m pip install --upgrade nvidia-smi
 sudo python3 -m pip install --upgrade tensorflow
 sudo python3 -m pip install --upgrade tensorboard
 sudo python3 -m pip install --upgrade tensorboardcolab
+sudo python3 -m pip install --upgrade prompt-toolkit
+sudo python3 -m pip install --upgrade ipython
+sudo python3 -m pip install --upgrade google-api-python-client
+sudo python3 -m pip install --upgrade google-colab
+sudo python3 -m pip install --upgrade google-auth
+sudo python3 -m pip install --upgrade nvidia-smi
 sudo python3 -m pip install --upgrade keras
 sudo python3 -m pip install --upgrade psutil
 sudo python3 -m pip install --upgrade setuptools
-sudo python3 -m pip install --upgrade mlagents==0.16.1
 
+sudo python3 -m pip install --upgrade mlagents==0.16.1
 
 sudo pip install mlagents
 
@@ -77,24 +94,49 @@ sudo apt-get install pulseaudio
 sudo apt-get install libarchive-tools
 sudo apt-get install libgtk-3-dev
 
+# Install Unity
+wget http://beta.unity3d.com/download/292b93d75a2c/UnitySetup-2019.1.0f2 -O UnityInstaller
+chmod +x UnityInstaller
 sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
 
+# Create license file
 cd /opt/Editor/Unity/Editor
 sudo ./Unity -nographics -logFile -batchmode -createManualActivationFile
 
-mv Unity_v2019.1.0f2.alf /home/rsaenz
-mv Unity_v2019.1.0f2.alf UnityRequest.alf
-gcloud compute scp --recurse duplicate-for-ml-agents:/home/rsaenz/UnityRequest.alf /Users/rsaenz/Desktop --zone="us-west1-c" --project="master-thesis-456789"
+# Move License Request to home
+sudo mv Unity_v2019.1.0f2.alf /home/rsaenz
+cd /home/rsaenz
 
-# Activation fails if the licence request file has a different name than the original, so must be reverted back
+# Download Licese Request file to local (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse unal-one-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.alf /Users/rsaenz/Desktop --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
 
-gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicence.ulf duplicate-for-ml-agents:/home/rsaenz/ --zone="us-west1-c" --project="master-thesis-456789"
+# Create License from Request. Activation fails if the licence request file has a different name than the original, so must be reverted back
+https://license.unity3d.com/check-auth
 
-sudo cp -r "UnityLicence.ulf"  "/opt/Editor/Unity/Editor"
+# Send License to server  (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf unal-one-ml-agents:/home/rsaenz/ --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
 
+# Install license
+sudo cp -r "UnityLicense.ulf"  "/opt/Editor/Unity/Editor"
+cd /opt/Editor/Unity/Editor
 sudo ./Unity -nographics -logFile -batchmode -manualLicenseFile UnityLicense.ulf
+sudo rm -r -f UnityLicense.ulf
+cd /home/rsaenz
 
-gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh duplicate-for-ml-agents:/home/rsaenz/
+# Delete license files
+rm -r -f UnityLicense.ulf
+rm -r -f Unity_v2019.1.0f2.alf
+rm -r -f UnityInstaller
+
+# Clone repos
+git clone -b release_2_branch https://github.com/Unity-Technologies/ml-agents.git
+git clone -b master https://github.com/rsaenzi/master-thesis.git
+
+# Test ml-agents
+mlagents-learn -h
+
+# Send script file
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-one-ml-agents:/home/rsaenz/
 
 
 ---------------------------

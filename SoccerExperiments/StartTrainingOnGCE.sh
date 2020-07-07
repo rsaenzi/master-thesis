@@ -37,8 +37,8 @@ echo 'Clonning master-thesis repo:'
 git clone -b master https://github.com/rsaenzi/master-thesis.git
 
 # Run experiments
-echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curriculums AB:'
-mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigSAC.yaml' --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaAB.yaml' --env='master-thesis/SoccerExperiments/builds/linux_exe1/Linux_v12_9fields_Exe1.x86_64' --run-id=SAC_CurriculumsAB --num-envs 1 --no-graphics --force
+echo 'Running 100M experiments with Soft Actor-Critic (SAC) + Curricula B:'
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigSAC.yaml' --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaB.yaml' --env='master-thesis/SoccerExperiments/builds/linux_exe1/Linux_v12_9fields_Exe1.x86_64' --run-id=SAC_CurriculaB --num-envs 1 --no-graphics --force
 
 # Shutdown the instance to avoid more charges
 sleep 30
