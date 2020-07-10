@@ -123,7 +123,7 @@ gcloud compute scp --recurse chapi-one-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.
 https://license.unity3d.com/check-auth
 
 # Send License to server  (RUN ON ANOTHER TERMINAL INSTANCE)
-gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf sport-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
 
 # Install license
 sudo cp -r "UnityLicense.ulf"  "/opt/Editor/Unity/Editor"
