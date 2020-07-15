@@ -15,6 +15,8 @@ gcloud config list
 # See instances
 gcloud compute instances list
 
+-----------------------------
+
 # Connect to Virtual Machine using SSH
 gcloud compute ssh "chapi-one-ml-agents" --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
 gcloud compute ssh "chapi-two-ml-agents" --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
@@ -42,12 +44,16 @@ rm -r -f -d master-thesis
 
 # Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL INSTANCE)
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
-
-gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
 
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-one-ml-agents:/home/rsaenz/ --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
 
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-one-ml-agents:/home/rsaenz/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
 
 # Verify StartTrainingOnGCE.sh content
 cat StartTrainingOnGCE.sh
@@ -159,10 +165,10 @@ git clone -b master https://github.com/rsaenzi/master-thesis.git
 mlagents-learn -h
 
 # Send script file (RUN ON ANOTHER TERMINAL INSTANCE)
-# gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
-# gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
-# gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
-# gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
 
 
 ---------------------------
