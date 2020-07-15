@@ -1,7 +1,5 @@
-# Behaviour Name
+# Curriculums A+B
 SoccerAcademy:
-
-  # Curriculums A+B
   measure: progress
   min_lesson_length: 100
   signal_smoothing: true

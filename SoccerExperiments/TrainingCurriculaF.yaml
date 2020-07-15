@@ -1,8 +1,8 @@
-# Curricula B
+# Curricula E
 SoccerAcademy:
   measure: progress
   min_lesson_length: 100
   signal_smoothing: true
-  thresholds: [0.1, 0.2, 0.3]
+  thresholds: [0.1]
   parameters:
-    ball_touch_reward: [0.3, 0.2, 0.1, 0.0]
+    opponent_speed: [0.0, 2.0]
