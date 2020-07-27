@@ -42,6 +42,7 @@ rm -r -f -d models
 rm -r -f -d summaries
 rm -r -f -d master-thesis
 rm -r -f -d ml-agents
+rm -r -f -d TrainingPPO_A.sh
 
 # Send training file to server (RUN ON ANOTHER TERMINAL INSTANCE)
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_A.sh chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
