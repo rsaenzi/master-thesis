@@ -38,7 +38,7 @@ git clone -b master https://github.com/rsaenzi/master-thesis.git
 
 # Run experiments
 echo 'Experiment: PPO + Curricula B'
-mlagents-learn 'master-thesis/SoccerExperiments/algorithms/AlgorithmPPO.yaml' --run-id=V2_PPO_CurriculaB --curriculum 'master-thesis/SoccerExperiments/curriculums/CurriculaB.yaml' --env='master-thesis/SoccerExperiments/builds/Linux_v13_1field.x86_64' --num-envs 1 --no-graphics --force
+mlagents-learn 'master-thesis/SoccerExperiments/algorithms/AlgorithmPPO.yaml' --run-id=V2_PPO_CurriculaB --curriculum 'master-thesis/SoccerExperiments/curriculums/CurriculaB.yaml' --env='master-thesis/SoccerExperiments/builds/Linux_v14_4fields.x86_64' --num-envs 1 --no-graphics --force
 
 # Shutdown the instance to avoid more charges
 sleep 30
