@@ -1,0 +1,9 @@
+# Curricula H
+SoccerAcademy:
+  measure: progress
+  min_lesson_length: 100
+  signal_smoothing: true
+  thresholds: [0.10, 0.15, 0.25, 0.35, 0.45, 0.55]
+  parameters:
+    opponent_speed: [0.0, 0.0, 1.0, 1.25, 1.5, 1.75, 2.0]
+    opponent_exist: [0.0, 1.0, 1.0, 1.0,  1.0, 1.0,  1.0]

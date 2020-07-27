@@ -1,0 +1,267 @@
+# ----------------------------------------------------------
+# Steps to run experiments on Google Compute Engine instance
+# ----------------------------------------------------------
+
+# To change active configuration
+gcloud config configurations activate chapi-compute-engine-account
+gcloud config configurations activate unal-compute-engine-account
+gcloud config configurations activate beto-compute-engine-account
+gcloud config configurations activate sport-compute-engine-account
+
+# See active configuration
+gcloud config configurations list
+gcloud config list
+
+# See instances
+gcloud compute instances list
+
+-----------------------------
+
+# Connect to Virtual Machine using SSH
+gcloud compute ssh "chapi-one-ml-agents" --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute ssh "chapi-two-ml-agents" --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+gcloud compute ssh "unal-one-ml-agents" --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute ssh "unal-two-ml-agents" --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+gcloud compute ssh "instance-for-ml-agents" --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute ssh "instance-two-ml-agents" --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+gcloud compute ssh "sport-one-ml-agents" --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+gcloud compute ssh "sport-two-ml-agents" --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+tail -f nohup.out
+
+-----------------------------
+
+
+# Delete old experiment files
+rm -r -f StartTrainingOnGCE.sh
+rm -r -f nohup.out
+rm -r -f -d models
+rm -r -f -d summaries
+rm -r -f -d master-thesis
+
+# Send training file to server (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_A.sh chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+# Verify TrainingPPO_A.sh content
+cat TrainingPPO_A.sh
+
+# Make .sh file executable
+chmod +x TrainingPPO_A.sh
+
+# Run .sh file independenly of SSH connection
+nohup ./TrainingPPO_A.sh &
+
+# Monitor log file
+tail -f nohup.out
+
+
+---------------------------
+
+Get Experiment Results:
+
+
+	PPO_only_NEW
+
+		gcloud compute ssh "chapi-two-ml-agents" --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_only_NEW/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_only_NEW/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/StartTrainingOnGCE.sh /Users/rsaenz/Downloads/PPO_only_NEW/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_only_NEW/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+
+	PPO_CurriculaC
+		gcloud compute ssh "chapi-two-ml-agents" --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaC/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaC/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/StartTrainingOnGCE.sh /Users/rsaenz/Downloads/PPO_CurriculaC/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaC/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+
+---------------------------
+
+
+# Connect to my macbook
+ssh rsaenzi@MacBook-Pro-Rigoberto.local
+cd Documents/Projects/master-thesis/SoccerExperiments
+tail -f nohup.out
+	Control+D to close connection
+
+
+---------------------------
+
+SETUP NEW INSTANCE FOR UNITY ML
+
+sudo python3 -m pip install --upgrade pip
+
+sudo python3 -m pip install tensorflow
+sudo python3 -m pip install --upgrade tensorflow
+sudo python3 -m pip install --upgrade tensorboard
+sudo python3 -m pip install --upgrade tensorboardcolab
+sudo python3 -m pip install --upgrade prompt-toolkit
+sudo python3 -m pip install --upgrade ipython
+sudo python3 -m pip install --upgrade google-api-python-client
+sudo python3 -m pip install --upgrade google-colab
+sudo python3 -m pip install --upgrade google-auth
+sudo python3 -m pip install --upgrade nvidia-smi
+sudo python3 -m pip install --upgrade keras
+sudo python3 -m pip install --upgrade psutil
+sudo python3 -m pip install --upgrade setuptools
+
+sudo python3 -m pip install --upgrade mlagents==0.16.1
+
+sudo pip install mlagents
+
+sudo apt -qq update
+sudo apt -qq install npm
+sudo apt -qq install xvfb
+sudo apt -qq install libgconf-2-4
+sudo apt -qq install gconf-service lib32gcc1 lib32stdc++6 libasound2 libc6 libc6-i386 libcairo2 libcap2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libfreetype6 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libgl1-mesa-glx libglib2.0-0 libglu1-mesa libgtk2.0-0 libnspr4 libnss3 libpango1.0-0 libstdc++6 libx11-6 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxtst6 zlib1g debconf
+sudo apt -qq install nodejs-dev node-gyp libssl1.0-dev
+
+sudo apt-get update
+sudo apt-get install pulseaudio
+sudo apt-get install libarchive-tools
+sudo apt-get install libgtk-3-dev
+
+# Install Unity
+wget http://beta.unity3d.com/download/292b93d75a2c/UnitySetup-2019.1.0f2 -O UnityInstaller
+chmod +x UnityInstaller
+sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
+
+# Create license file
+cd /opt/Editor/Unity/Editor
+sudo ./Unity -nographics -logFile -batchmode -createManualActivationFile
+
+# Move License Request to home
+sudo mv Unity_v2019.1.0f2.alf /home/rsaenz
+cd /home/rsaenz
+
+# Download Licese Request file to local (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse chapi-two-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.alf /Users/rsaenz/Desktop --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse unal-two-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.alf /Users/rsaenz/Desktop --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse instance-two-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.alf /Users/rsaenz/Desktop --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/Unity_v2019.1.0f2.alf /Users/rsaenz/Desktop --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+# Create License from Request. Activation fails if the licence request file has a different name than the original, so must be reverted back
+https://license.unity3d.com/manual
+
+# Send License to server (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Desktop/UnityLicense.ulf sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+# Install license
+sudo cp -r "UnityLicense.ulf"  "/opt/Editor/Unity/Editor"
+cd /opt/Editor/Unity/Editor
+sudo ./Unity -nographics -logFile -batchmode -manualLicenseFile UnityLicense.ulf
+sudo rm -r -f UnityLicense.ulf
+cd /home/rsaenz
+
+# Delete license files
+rm -r -f UnityLicense.ulf
+rm -r -f Unity_v2019.1.0f2.alf
+rm -r -f UnityInstaller
+
+# Clone repos
+git clone -b release_2_branch https://github.com/Unity-Technologies/ml-agents.git
+git clone -b master https://github.com/rsaenzi/master-thesis.git
+
+# Test ml-agents
+mlagents-learn -h
+
+# Send script file (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+
+---------------------------
+
+
+# Delete previous files
+rm -r -f -d models
+rm -r -f -d summaries
+rm -r -f -d master-thesis
+
+# Download master-thesis
+git clone -b master https://github.com/rsaenzi/master-thesis.git
+
+# Test ml-agents
+mlagents-learn -h
+
+# Run experiments
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux/Linux_v11_4fields.x86_64' --run-id=PPO_CurriculaA --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaA.yaml' --no-graphics --force
+
+# Get experiments (run on other terminal windows that has not a ssh open connection)
+gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/models /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
+gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/summaries /Users/rsaenz/Desktop/Experiments_PPO_CurriculaA
+
+# Launch Jupyter Notebooks web client
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser &
+
+# Open Jupyter Notebook web client
+http://104.154.139.227:8888/
+http://104.154.139.227:8888/?token=37536be81c20f363915649de2e3c8e9552c32216fcb7e925
+
+# Create SSH key
+cd /home/rsaenz/.ssh/
+ssh-keygen -t rsa -f ~/.ssh/ssh_key_compute_engine -C rsaenz
+cat ssh_key_compute_engine.pub
+
+# To edit a file
+vim /etc/vsftpd.conf
+
+# Install Unity
+sudo ./UnityInstaller --unattended --components=Unity --install-location=/opt/Editor/Unity
+
+# Copy license file
+cp /home/rsaenz/UnityLicense.x.ulf /opt/Editor/Unity/Editor
+
+# Move license file
+mv 'Unity_v2019.1.0f2.alf' '/home/rsaenz/'
+
+# Add Unity to project path
+# Run 'cd /opt/Editor/Unity/Editor; ./Unity'
+export PATH=$PATH:/opt/Editor/Unity/Editor
+export PATH=$PATH:/usr/local/lib/python3.7/
+echo $PATH
+
+# Request license
+./Unity -nographics -logFile -batchmode -createManualActivationFile
+
+# Install license
+./Unity -nographics -logFile -batchmode -manualLicenseFile '/home/rsaenz/UnityLicense.x.ulf'
+
+# Open Project (Update API)
+Unity -nographics -logFile -batchmode -accept-apiupdate -buildTarget Linux64 -projectPath '/master-thesis/SoccerAcademy' -quit
+
+# Build Project
+Unity -nographics -logFile -batchmode -buildTarget Linux64 -buildLinux64Player 'SoccerAcademy.x86_64' -quit
+
+# Run experiments
+mlagents-learn 'master-thesis/SoccerExperiments/TrainingConfigPPO.yaml' --env='master-thesis/SoccerExperiments/builds/linux/Linux_v11_4fields.x86_64' --run-id=PPO_curriculaA_test --num-envs 1 --curriculum 'master-thesis/SoccerExperiments/TrainingCurriculaA.yaml' --no-graphics --force
+
+
+
+
+
+
+# Transfer StartTrainingOnGCE.sh file to server (RUN ON ANOTHER TERMINAL INSTANCE)
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-one-ml-agents:/home/rsaenz/ --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-for-ml-agents:/home/rsaenz/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-one-ml-agents:/home/rsaenz/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/StartTrainingOnGCE.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
