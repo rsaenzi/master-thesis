@@ -44,6 +44,16 @@ rm -r -f -d master-thesis
 
 # Send training file to server (RUN ON ANOTHER TERMINAL INSTANCE)
 gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_A.sh chapi-one-ml-agents:/home/rsaenz/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_B.sh chapi-two-ml-agents:/home/rsaenz/ --zone "us-west4-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_C.sh unal-one-ml-agents:/home/rsaenz/ --zone "us-west1-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_D.sh unal-two-ml-agents:/home/rsaenz/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_E.sh instance-for-ml-agents:/home/rsaenz/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_F.sh instance-two-ml-agents:/home/rsaenz/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_G.sh sport-one-ml-agents:/home/rsaenz/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+gcloud compute scp --recurse /Users/rsaenz/Documents/Projects/master-thesis/SoccerExperiments/trainings/TrainingPPO_H.sh sport-two-ml-agents:/home/rsaenz/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
 
 # Verify TrainingPPO_A.sh content
 cat TrainingPPO_A.sh
