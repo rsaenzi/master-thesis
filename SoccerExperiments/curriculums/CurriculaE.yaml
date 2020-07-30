@@ -6,3 +6,4 @@ SoccerAcademy:
   thresholds: [0.1]
   parameters:
     opponent_speed: [0.0, 2.0]
+    opponent_exist: [0.0, 1.0]

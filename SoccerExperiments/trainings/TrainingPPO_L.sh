@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-# chmod +x TrainingPPO_H.sh
-# nohup ./TrainingPPO_H.sh &
+# chmod +x TrainingPPO_L.sh
+# nohup ./TrainingPPO_L.sh &
 # tail -f nohup.out
 
 clear
@@ -37,8 +37,8 @@ echo 'Clonning master-thesis repo:'
 git clone -b master https://github.com/rsaenzi/master-thesis.git
 
 # Run experiments
-echo 'Experiment: PPO + Curricula H'
-mlagents-learn 'master-thesis/SoccerExperiments/algorithms/AlgorithmPPO.yaml' --run-id=V2_PPO_CurriculaH --curriculum 'master-thesis/SoccerExperiments/curriculums/CurriculaH.yaml' --env='master-thesis/SoccerExperiments/builds/Linux_v14_4fields.x86_64' --num-envs 1 --no-graphics --force
+echo 'Experiment: PPO + Curricula L'
+mlagents-learn 'master-thesis/SoccerExperiments/algorithms/AlgorithmPPO.yaml' --run-id=PPO_CurriculaL --curriculum 'master-thesis/SoccerExperiments/curriculums/CurriculaL.yaml' --env='master-thesis/SoccerExperiments/builds/Linux_v14_4fields.x86_64' --num-envs 1 --no-graphics --force
 
 # Shutdown the instance to avoid more charges
 sleep 30
