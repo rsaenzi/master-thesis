@@ -85,6 +85,52 @@ tail -f nohup.out
 
 Get Experiment Results:
 
+	PPO_CurriculaR
+
+		gcloud compute ssh "sport-two-ml-agents" --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaR/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaR/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/TrainingPPO_R.sh /Users/rsaenz/Downloads/PPO_CurriculaR/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaR/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+	PPO_CurriculaQ
+
+		gcloud compute ssh "sport-one-ml-agents" --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+		gcloud compute scp --recurse sport-one-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaQ/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-one-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaQ/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-one-ml-agents:/home/rsaenz/TrainingPPO_Q.sh /Users/rsaenz/Downloads/PPO_CurriculaQ/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+		gcloud compute scp --recurse sport-one-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaQ/ --zone "us-central1-c" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
+
+	PPO_CurriculaP
+
+		gcloud compute ssh "instance-two-ml-agents" --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+		gcloud compute scp --recurse instance-two-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaP/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaP/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-two-ml-agents:/home/rsaenz/TrainingPPO_P.sh /Users/rsaenz/Downloads/PPO_CurriculaP/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaP/ --zone="us-east1-b" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+
+	PPO_CurriculaO
+
+		gcloud compute ssh "instance-for-ml-agents" --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+		gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaO/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaO/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/TrainingPPO_O.sh /Users/rsaenz/Downloads/PPO_CurriculaO/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+		gcloud compute scp --recurse instance-for-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaO/ --zone="us-central1-c" --project="master-thesis-456789" --configuration "beto-compute-engine-account"
+
+	PPO_CurriculaN
+
+		gcloud compute ssh "unal-two-ml-agents" --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
+		gcloud compute scp --recurse unal-two-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaN/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+		gcloud compute scp --recurse unal-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaN/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+		gcloud compute scp --recurse unal-two-ml-agents:/home/rsaenz/TrainingPPO_N.sh /Users/rsaenz/Downloads/PPO_CurriculaN/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+		gcloud compute scp --recurse unal-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaN/ --zone "us-west2-a" --project "video-games-thesis" --configuration "unal-compute-engine-account"
+
 
 	SAC_CurriculaA
 
@@ -104,7 +150,6 @@ Get Experiment Results:
 		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaJ/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
 		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/StartTrainingOnGCE.sh /Users/rsaenz/Downloads/PPO_CurriculaJ/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
 		gcloud compute scp --recurse sport-two-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaJ/ --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
-
 
 
 	PPO_only_NEW
