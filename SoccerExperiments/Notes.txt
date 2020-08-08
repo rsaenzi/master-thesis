@@ -85,6 +85,19 @@ tail -f nohup.out
 
 Get Experiment Results:
 
+
+
+
+	PPO_CurriculaK
+
+		gcloud compute ssh "chapi-one-ml-agents" --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+		gcloud compute scp --recurse chapi-one-ml-agents:/home/rsaenz/models/ /Users/rsaenz/Downloads/PPO_CurriculaK/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-one-ml-agents:/home/rsaenz/summaries/ /Users/rsaenz/Downloads/PPO_CurriculaK/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-one-ml-agents:/home/rsaenz/TrainingPPO_K.sh /Users/rsaenz/Downloads/PPO_CurriculaK/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+		gcloud compute scp --recurse chapi-one-ml-agents:/home/rsaenz/nohup.out /Users/rsaenz/Downloads/PPO_CurriculaK/ --zone "us-central1-a" --project "mindful-braid-282902" --configuration "chapi-compute-engine-account"
+
+
 	PPO_CurriculaR
 
 		gcloud compute ssh "sport-two-ml-agents" --zone "us-west1-b" --project "curriculum-learning-thesis" --configuration "sport-compute-engine-account"
