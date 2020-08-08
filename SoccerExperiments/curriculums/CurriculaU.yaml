@@ -1,0 +1,8 @@
+# Curriculum U
+SoccerAcademy:
+  measure: progress
+  min_lesson_length: 100
+  signal_smoothing: true
+  thresholds: [0.15, 0.30, 0.45]
+  parameters:
+    ball_touch_reward: [0.5, 0.25, 0.1, 0.0]
