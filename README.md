@@ -5,14 +5,16 @@
 #### Dept. of Systems and Industrial Engineering. Faculty of Engineering. National University of Colombia. Bogotá, Colombia.
 
 ### Abstract:
-Curriculum learning is a technique that can increase the learning speed of an intelligent agent that is trained using reinforcement learning to learn a behavior policy to play a video game in an optimal way. This technique can be seen as a special form of transfer learning and it is based on the idea of training using easier examples first, then using the harder complex ones later, to guide the optimization process. This hypothesis is tested in a 3D 1-vs-1 soccer video game running in Unity, where an agent is trained using two different reinforcement learning algorithms to play an already trained opponent agent. Two curriculums were designed for the soccer video game, the agent was trained with and without using these curriculums. Results indicate that in some cases having a curriculum can increase the learning rate, requiring fewer training steps to get the same performance statistics as the non-curriculum approach.
+We want to measure the impact of the curriculum learning technique on the training time for an intelligent agent who is learning to play a video game using reinforcement learning, to test this idea several experiments were designed with different training curriculums adapted for the video game chosen as a case study, then all were executed on a selected game simulation platform, using two reinforcement learning algorithms, and using the mean cumulative reward as a performance measure. Results suggest that curriculum learning has a significant impact on the training process, increasing the training times in some cases, and decreasing them up to 40% percent in some other cases.
+
+### Resumen:
+Se desea medir el impacto de la técnica de aprendizaje por currículos sobre el tiempo de entrenamiento de un agente inteligente que está aprendiendo a jugar un video juego usando aprendizaje por refuerzo, para esto se diseñaron varios experimentos con diferentes currículos adaptados para el video juego seleccionado como caso de estudio, y se ejecutaron en una plataforma de simulación de juegos seleccionada, usando dos algoritmos de aprendizaje por refuerzo, y midiendo su desempeño usando la recompensa media acumulada. Los resultados sugieren que usar aprendizaje por currículos tiene un impacto significativo sobre el proceso de entrenamiento, en algunos casos alargando los tiempos de entrenamiento, y en otros casos disminuyéndolos en hasta en un 40% por ciento.
 
 ### Keywords
-Reinforcement Learning, Curriculum Learning, Continuation Method, Sparse Rewards, Deep Learning, Proximal Policy Optimization, Soft Actor-Critic, Video Games, Unity Machine Learning Agents, Unity ML-Agents SDK, Unity Engine, Game AI
+Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine.
 
 ### Links:
-* Document: https://bit.ly/rsaenzi-master-thesis
-* Repository: https://github.com/rsaenzi/master-thesis
+* Thesis Document: https://bit.ly/rsaenzi-master-thesis
 * References: https://mendeley.com/community/rigobertosaenz-referencias/
 
 ### Supervised by:
