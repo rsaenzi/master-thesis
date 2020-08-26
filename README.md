@@ -5,16 +5,17 @@
 #### Dept. of Systems and Industrial Engineering. Faculty of Engineering. National University of Colombia. Bogotá, Colombia.
 
 ### Abstract:
-We want to measure the impact of the curriculum learning technique on the training time for an intelligent agent who is learning to play a video game using reinforcement learning, to test this idea several experiments were designed with different training curriculums adapted for the video game chosen as a case study, then all were executed on a selected game simulation platform, using two reinforcement learning algorithms, and using the mean cumulative reward as a performance measure. Results suggest that curriculum learning has a significant impact on the training process, increasing the training times in some cases, and decreasing them up to 40% percent in some other cases.
+We want to measure the impact of the curriculum learning technique on a reinforcement training setup, several experiments were designed with different training curriculums adapted for the video game chosen as a case study. Then all were executed on a selected game simulation platform, using two reinforcement learning algorithms, and using the mean cumulative reward as a performance measure. Results suggest that curriculum learning has a significant impact on the training process, increasing training times in some cases, and decreasing them up to 40% percent in some other cases.
 
 ### Resumen:
 Se desea medir el impacto de la técnica de aprendizaje por currículos sobre el tiempo de entrenamiento de un agente inteligente que está aprendiendo a jugar un video juego usando aprendizaje por refuerzo, para esto se diseñaron varios experimentos con diferentes currículos adaptados para el video juego seleccionado como caso de estudio, y se ejecutaron en una plataforma de simulación de juegos seleccionada, usando dos algoritmos de aprendizaje por refuerzo, y midiendo su desempeño usando la recompensa media acumulada. Los resultados sugieren que usar aprendizaje por currículos tiene un impacto significativo sobre el proceso de entrenamiento, en algunos casos alargando los tiempos de entrenamiento, y en otros casos disminuyéndolos en hasta en un 40% por ciento.
 
 ### Keywords
-Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine.
+Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine. 
 
 ### Links:
 * Thesis Document: https://bit.ly/rsaenzi-master-thesis
+* Journal Paper: http://bit.ly/rsaenzi-master-paper
 * References: https://mendeley.com/community/rigobertosaenz-referencias/
 
 ### Supervised by:
