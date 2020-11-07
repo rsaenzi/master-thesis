@@ -16,6 +16,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 ### Links:
 * Thesis Document: https://bit.ly/rsaenzi-master-thesis
 * Journal Paper: http://bit.ly/rsaenzi-master-paper
+* Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
 * References: https://mendeley.com/community/rigobertosaenz-referencias/
 
 ### Supervised by:
