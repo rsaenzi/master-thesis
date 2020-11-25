@@ -19,6 +19,10 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
 * References: https://mendeley.com/community/rigobertosaenz-referencias/
 
+### Press:
+* https://agenciadenoticias.unal.edu.co/detalle/article/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad.html
+* https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
+
 ### Supervised by:
 Ph.D. Jorge Eliecer Camargo Mendoza
 * Website: https://sites.google.com/site/camargoj/
