@@ -17,7 +17,6 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Thesis Document: https://bit.ly/rsaenzi-master-thesis
 * Journal Paper: http://bit.ly/rsaenzi-master-paper
 * Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
-* References: https://mendeley.com/community/rigobertosaenz-referencias/
 
 ### Press:
 * https://agenciadenoticias.unal.edu.co/detalle/article/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad.html
