@@ -20,6 +20,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 
 ### Press:
 * https://agenciadenoticias.unal.edu.co/detalle/article/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad.html
+* https://agenciadenoticias.unal.edu.co/detalle/article/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos.html
 * https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 
 ### Supervised by:
