@@ -14,9 +14,9 @@ Se desea medir el impacto de la técnica de aprendizaje por currículos sobre el
 Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine. 
 
 ### Links:
-* Thesis Document: https://bit.ly/rsaenzi-master-thesis
-* Journal Paper: http://bit.ly/rsaenzi-master-paper
+* Journal Paper: http://www.journal.iberamia.org/index.php/intartif/article/view/532
 * Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
+* Thesis Document: https://bit.ly/rsaenzi-master-thesis
 
 ### Press:
 * https://agenciadenoticias.unal.edu.co/detalle/article/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad.html
@@ -26,13 +26,12 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 ### Supervised by:
 Ph.D. Jorge Eliecer Camargo Mendoza
 * Website: https://sites.google.com/site/camargoj/
-* Citations: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
+* Google Scholar: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
 * CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
 
 ### Author:
 Rigoberto Sáenz Imbacuán
-* Curriculum Vitae: https://bit.ly/rsaenziCV
 * LinkedIn: https://linkedin.com/in/rsaenzi/
+* Curriculum Vitae: https://bit.ly/rsaenziCV
 * Google Scholar: https://scholar.google.com/citations?user=Zz4zIF4AAAAJ
 * CvLac: https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001440347
-* StackOverflow: http://stackoverflow.com/story/rsaenzi
