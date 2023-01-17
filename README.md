@@ -19,8 +19,8 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Thesis Document: https://bit.ly/rsaenzi-master-thesis
 
 ### Press:
-* https://agenciadenoticias.unal.edu.co/detalle/article/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad.html
-* https://agenciadenoticias.unal.edu.co/detalle/article/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos.html
+* http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
+* http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
 * https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 
 ### Supervised by:
