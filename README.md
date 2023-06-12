@@ -45,7 +45,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
 
 ### Author:
-Rigoberto Sáenz Imbacuán
+<b>Rigoberto Sáenz Imbacuán</b>
 * LinkedIn: https://linkedin.com/in/rsaenzi/
 * Curriculum Vitae: https://bit.ly/rsaenziCV
 * Google Scholar: https://scholar.google.com/citations?user=Zz4zIF4AAAAJ&hl=en
