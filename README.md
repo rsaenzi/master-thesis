@@ -39,7 +39,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Adjam: https://library.ajman.ac.ae/eds/detail?db=asn&an=154089422
 
 ### Supervisor:
-Ph.D. Jorge Eliecer Camargo Mendoza
+<b>Ph.D. Jorge Eliecer Camargo Mendoza</b>
 * Website: https://sites.google.com/site/camargoj/
 * Google Scholar: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
 * CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
