@@ -25,15 +25,16 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
 * Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
 
-### Indexed by:
-* OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
-* Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
-
 ### Press:
 * http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 * http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
 * https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 * https://sites.google.com/unal.edu.co/un-securelab/publications-products
+
+### Listed by:
+* dblp: https://dblp.org/db/journals/aepia/aepia24.html#CamargoS21
+* OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
+* Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
 
 ### Supervised by:
 Ph.D. Jorge Eliecer Camargo Mendoza
