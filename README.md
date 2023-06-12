@@ -35,6 +35,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * dblp: https://dblp.org/db/journals/aepia/aepia24.html#CamargoS21
 * OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
 * Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
+* Adjam: https://library.ajman.ac.ae/eds/detail?db=asn&an=154089422
 
 ### Supervised by:
 Ph.D. Jorge Eliecer Camargo Mendoza
