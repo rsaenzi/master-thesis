@@ -18,8 +18,11 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Journal: http://www.journal.iberamia.org/index.php/intartif/article/view/532
 * Unal: https://repositorio.unal.edu.co/handle/unal/78592
 * UniRioja: https://dialnet.unirioja.es/servlet/articulo?codigo=8234147
+* Thesis: https://bit.ly/rsaenzi-master-thesis
+
+### Citations:
+* Google Scholar: https://scholar.google.com/scholar?cites=17917617000928451390&as_sdt=2005&sciodt=0,5&hl=en
 * Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
-* Thesis Document: https://bit.ly/rsaenzi-master-thesis
 
 ### Press:
 * http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
