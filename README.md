@@ -25,6 +25,7 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 * http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
 * https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
+* https://sites.google.com/unal.edu.co/un-securelab/publications-products
 
 ### Supervised by:
 Ph.D. Jorge Eliecer Camargo Mendoza
