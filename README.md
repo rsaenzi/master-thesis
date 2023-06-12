@@ -1,4 +1,4 @@
-<p align="center"><a href="http://www.journal.iberamia.org/index.php/intartif/article/view/532/146"><img src="/Banner.png"></a></p>
+<p align="center"><a href="http://www.journal.iberamia.org/index.php/intartif/article/view/532/146" target="_blank"><img src="/Banner.png" alt="Evaluating the impact of curriculum learning on the training process for an intelligent agent in a video game" style="horizontal-align:middle"></a></p>
 
 # Evaluating the impact of curriculum learning on the training process for an intelligent agent in a video game
 #### A thesis submitted in partial fulfillment of requirements for M.Sc in Systems and Computing Engineering degree
