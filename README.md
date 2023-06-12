@@ -26,8 +26,9 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
 
 ### Press:
-* Agencia UNAL 1: http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
-* Agencia UNAL 2: http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
+* Agencia UNAL:
+  * http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
+  * http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
 * Virtual Pro: https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 * UNSeculab: https://sites.google.com/unal.edu.co/un-securelab/publications-products
 
