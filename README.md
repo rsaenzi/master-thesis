@@ -1,7 +1,7 @@
 <p align="center"><img src="/Banner.png"></p>
 
 # Evaluating the impact of curriculum learning on the training process for an intelligent agent in a video game
-#### A thesis submitted in partial fulfillment of the requirements for the degree M.Sc in Systems and Computing Engineering
+#### A thesis submitted in partial fulfillment of requirements for M.Sc in Systems and Computing Engineering degree
 #### Dept. of Systems and Industrial Engineering. Faculty of Engineering. National University of Colombia. Bogotá, Colombia.
 
 ### Abstract:
