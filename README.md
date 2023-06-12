@@ -36,5 +36,5 @@ Ph.D. Jorge Eliecer Camargo Mendoza
 Rigoberto Sáenz Imbacuán
 * LinkedIn: https://linkedin.com/in/rsaenzi/
 * Curriculum Vitae: https://bit.ly/rsaenziCV
-* Google Scholar: https://scholar.google.com/citations?user=Zz4zIF4AAAAJ
+* Google Scholar: https://scholar.google.com/citations?user=Zz4zIF4AAAAJ&hl=en
 * CvLac: https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001440347
