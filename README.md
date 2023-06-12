@@ -24,6 +24,9 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Google Scholar: https://scholar.google.com/scholar?cites=17917617000928451390&as_sdt=2005&sciodt=0,5&hl=en
 * Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
 * Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
+
+### Indexed by:
+* OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
 * Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
 
 ### Press:
