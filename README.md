@@ -14,8 +14,11 @@ Se desea medir el impacto de la técnica de aprendizaje por currículos sobre el
 Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine. 
 
 ### Links:
-* Journal Paper: http://www.journal.iberamia.org/index.php/intartif/article/view/532
-* Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
+* Paper: http://journal.iberamia.org/index.php/intartif/article/view/532/146
+* Journal: http://www.journal.iberamia.org/index.php/intartif/article/view/532
+* Unal: https://repositorio.unal.edu.co/handle/unal/78592
+* UniRioja: https://dialnet.unirioja.es/servlet/articulo?codigo=8234147
+* Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
 * Thesis Document: https://bit.ly/rsaenzi-master-thesis
 
 ### Press:
