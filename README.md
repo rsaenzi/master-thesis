@@ -13,17 +13,19 @@ Se desea medir el impacto de la técnica de aprendizaje por currículos sobre el
 ### Keywords
 Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulative Reward, Proximal Policy Optimization, Video Games, Game AI, Unity Machine Learning Agents, Unity ML-Agents Toolkit, Unity Engine. 
 
-### Links:
-* Paper: http://journal.iberamia.org/index.php/intartif/article/view/532/146
-* Journal: http://www.journal.iberamia.org/index.php/intartif/article/view/532
-* Unal: https://repositorio.unal.edu.co/handle/unal/78592
-* UniRioja: https://dialnet.unirioja.es/servlet/articulo?codigo=8234147
-* Thesis: https://bit.ly/rsaenzi-master-thesis
+### Journal Paper:
+* Paper Document: http://journal.iberamia.org/index.php/intartif/article/view/532/146
+* Journal Website: http://www.journal.iberamia.org/index.php/intartif/article/view/532
+* Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
+
+### Thesis:
+* Thesis Document: https://repositorio.unal.edu.co/bitstream/handle/unal/78592/1018417749.2020.pdf
+* Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
+* Research Gate: https://www.researchgate.net/publication/380127141_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
 
 ### Citations:
 * Google Scholar: https://scholar.google.com/scholar?cites=17917617000928451390&as_sdt=2005&sciodt=0,5&hl=en
 * Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
-* Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
 
 ### Press:
 * Agencia UNAL:
@@ -32,7 +34,8 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Virtual Pro: https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
 * UNSeculab: https://sites.google.com/unal.edu.co/un-securelab/publications-products
 
-### Listed:
+### Listed In:
+* UniRioja: https://dialnet.unirioja.es/servlet/articulo?codigo=8234147
 * Dblp: https://dblp.org/db/journals/aepia/aepia24.html#CamargoS21
 * OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
 * Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
