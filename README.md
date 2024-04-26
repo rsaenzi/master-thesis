@@ -31,13 +31,12 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
   * http://agenciadenoticias.unal.edu.co/detalle/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
   * http://agenciadenoticias.unal.edu.co/detalle/inteligencia-artificial-aprende-a-ganar-tiempo-en-videojuegos
 * Virtual Pro: https://www.virtualpro.co/noticias/ia-aprende-mas-rapido-un-videojuego-con-niveles-graduales-de-dificultad
-* UNSeculab: https://sites.google.com/unal.edu.co/un-securelab/publications-products
 
 ### Listed In:
 * UniRioja: https://dialnet.unirioja.es/servlet/articulo?codigo=8234147
-* Dblp: https://dblp.org/db/journals/aepia/aepia24.html#CamargoS21
-* OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
 * Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
+* OAmg: https://oa.mg/work/10.4114/intartif.vol24iss68pp1-20
+* Dblp: https://dblp.org/db/journals/aepia/aepia24.html#CamargoS21
 * Adjam: https://library.ajman.ac.ae/eds/detail?db=asn&an=154089422
 
 ### Author:
@@ -49,6 +48,10 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 
 ### Supervisor:
 <b>Ph.D. Jorge Eliecer Camargo Mendoza</b>
-* Website: https://sites.google.com/site/camargoj/
+* Website: https://jecamargom.github.io/
+* LinkedIn: https://www.linkedin.com/in/jorge-camargo-77b10824/
 * Google Scholar: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
 * CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
+* UNSecurelab:
+  - https://ingenieria.bogota.unal.edu.co/unsecurelab/
+  - http://www.hermes.unal.edu.co/pages/Consultas/Grupo.xhtml?idGrupo=2473&opcion=1
