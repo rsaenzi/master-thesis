@@ -17,15 +17,14 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Paper Document: http://journal.iberamia.org/index.php/intartif/article/view/532/146
 * Journal Website: http://www.journal.iberamia.org/index.php/intartif/article/view/532
 * Research Gate: https://www.researchgate.net/publication/354981744_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
+* Google Scholar: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Zz4zIF4AAAAJ&citation_for_view=Zz4zIF4AAAAJ:u-x6o8ySG0sC
+* Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
 
-### Thesis:
+### Master Thesis:
 * Thesis Document: https://repositorio.unal.edu.co/bitstream/handle/unal/78592/1018417749.2020.pdf
 * Unal Repository: https://repositorio.unal.edu.co/handle/unal/78592
 * Research Gate: https://www.researchgate.net/publication/380127141_Evaluating_the_impact_of_curriculum_learning_on_the_training_process_for_an_intelligent_agent_in_a_video_game
-
-### Citations:
-* Google Scholar: https://scholar.google.com/scholar?cites=17917617000928451390&as_sdt=2005&sciodt=0,5&hl=en
-* Semantic Scholar: https://www.semanticscholar.org/paper/Evaluating-the-impact-of-curriculum-learning-on-the-Camargo-S%C3%A1enz/b689f565e9a63d831b332504c356b77dc25e23a0
+* Google Scholar: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Zz4zIF4AAAAJ&citation_for_view=Zz4zIF4AAAAJ:u5HHmVD_uO8C
 
 ### Press:
 * Agencia UNAL:
@@ -41,15 +40,15 @@ Curriculum Learning, Reinforcement Learning, Training Curriculum, Mean Cumulativ
 * Fatcat: https://fatcat.wiki/release/sjfcptixn5cedkytvfdfwavl3i
 * Adjam: https://library.ajman.ac.ae/eds/detail?db=asn&an=154089422
 
-### Supervisor:
-<b>Ph.D. Jorge Eliecer Camargo Mendoza</b>
-* Website: https://sites.google.com/site/camargoj/
-* Google Scholar: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
-* CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
-
 ### Author:
 <b>Rigoberto Sáenz Imbacuán</b>
 * LinkedIn: https://linkedin.com/in/rsaenzi/
 * Curriculum Vitae: https://bit.ly/rsaenziCV
 * Google Scholar: https://scholar.google.com/citations?user=Zz4zIF4AAAAJ&hl=en
 * CvLac: https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001440347
+
+### Supervisor:
+<b>Ph.D. Jorge Eliecer Camargo Mendoza</b>
+* Website: https://sites.google.com/site/camargoj/
+* Google Scholar: https://scholar.google.com.co/citations?user=7jS2MTUAAAAJ&hl=en
+* CvLac: http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000486388
